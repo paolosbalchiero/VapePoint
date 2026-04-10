@@ -498,19 +498,19 @@ display: none;
     <button class="fmt-btn" id="fmt-2030ml" onclick="setFmt('2030ml', this)">
       <span class="fmt-label">20 / 30 ML</span>
       <span class="fmt-price">14 / 19€</span>
-      <span class="fmt-sub">già con nicotina</span>
+      <span class="fmt-sub">scegli la nicotina</span>
     </button>
     <button class="fmt-btn" id="fmt-10ml" onclick="setFmt('10ml', this)">
       <span class="fmt-label">10 ML</span>
       <span class="fmt-price">7.50 / 8.50€</span>
-      <span class="fmt-sub">sali di nicotina</span>
+      <span class="fmt-sub">nicotina già inclusa</span>
     </button>
   </div>
 
   <!-- Price panels -->
 
   <div class="price-panel" id="pp-60ml">
-    <div class="price-panel-title">Prezzi 60 ml — scegli la nicotina al momento</div>
+    <div class="price-panel-title">Prezzi 60 ml — il prezzo varia in base alla nicotina scelta</div>
     <div class="price-pills">
       <div class="ppill"><div class="ppill-nic">0 mg</div><div class="ppill-val">25€</div></div>
       <div class="ppill"><div class="ppill-nic">3–4 mg</div><div class="ppill-val">30€</div></div>
@@ -520,17 +520,17 @@ display: none;
     </div>
   </div>
   <div class="price-panel hidden" id="pp-2030ml">
-    <div class="price-panel-title">Prezzi 20 ml / 30 ml — già pronti con nicotina</div>
+    <div class="price-panel-title">Prezzi 20 ml / 30 ml — scegli la nicotina, prezzo fisso</div>
     <div class="price-pills">
-      <div class="ppill"><div class="ppill-nic">20 ml</div><div class="ppill-val sm">14€</div><div class="ppill-sub">pronto</div></div>
-      <div class="ppill"><div class="ppill-nic">30 ml</div><div class="ppill-val sm">19€</div><div class="ppill-sub">pronto</div></div>
+      <div class="ppill"><div class="ppill-nic">20 ml</div><div class="ppill-val sm">14€</div><div class="ppill-sub">scegli la nicotina</div></div>
+      <div class="ppill"><div class="ppill-nic">30 ml</div><div class="ppill-val sm">19€</div><div class="ppill-sub">scegli la nicotina</div></div>
     </div>
   </div>
   <div class="price-panel hidden" id="pp-10ml">
-    <div class="price-panel-title">Prezzi 10 ml — sali di nicotina, già pronti</div>
+    <div class="price-panel-title">Prezzi 10 ml — nicotina già inclusa, scaglioni fissi per prodotto</div>
     <div class="price-pills">
-      <div class="ppill"><div class="ppill-nic">Monopolio</div><div class="ppill-val sm">7.50€</div></div>
-      <div class="ppill"><div class="ppill-nic">Elfbar / Elfic</div><div class="ppill-val sm">8.50€</div></div>
+      <div class="ppill"><div class="ppill-nic">Monopolio / Dreamods</div><div class="ppill-val sm">7.50€</div><div class="ppill-sub">3/6/9/15 o 4/8/16mg</div></div>
+      <div class="ppill"><div class="ppill-nic">Elfbar / Elfic</div><div class="ppill-val sm">8.50€</div><div class="ppill-sub">10 / 20 mg</div></div>
     </div>
   </div>
 
@@ -913,49 +913,79 @@ Object.entries(CREAM60).forEach(([sub,rows])=>rows.forEach(([b,f])=>add(b,f,'60m
   ["Latakia","Tabacco Secco Forte"],
 ].forEach(([b,f])=>add(b,f,'60ml','hybrid','tab-cremosi',[]));
 
-/* ── 20-30ML FRUTTATI ── */
+/* ── 20-30ML FRUTTATI (sizes exact from document) ── */
 [
-  ["Fantasi","Mela Verde",["20ml"]],["Fantasi","Mirtillo",["20ml","30ml"]],
+  // Fantasi: tutti 20 o 30 ml (dal doc: 20 O 30 ML)
+  ["Fantasi","Mela Verde",["20ml","30ml"]],
+  ["Fantasi","Mirtillo",["20ml","30ml"]],
   ["Fantasi","Anguria e Ciliegia",["20ml","30ml"]],
+  ["Fantasi Gummier","Caramelle alla Frutta",["20ml","30ml"]],
+  ["Fantasi","Gelato alla Fragola",["20ml","30ml"]],
+  ["Fantasi Spearmint","Menta",["20ml","30ml"]],
+  ["Fantasi","Uva Rossa",["20ml","30ml"]],
+  ["Fantasi NRG","Red Bull",["20ml","30ml"]],
+  ["Fantasi","Melone",["20ml","30ml"]],
+  ["Fantasi Punch","Tropicale e Agrumi",["20ml","30ml"]],
+  ["Fantasi","Fragola, Lampone e Ciliegia",["20ml","30ml"]],
+  ["Fantasi Banana","Banana",["20ml","30ml"]],
+  ["Fantasi Remix","Melone e Mirtillo",["20ml","30ml"]],
+  ["Fantasi","Limone",["20ml","30ml"]],
+  ["Fantasi","Arancia e Mango",["20ml","30ml"]],
+  ["Fantasi","Bubble Gum al Mirtillo",["20ml","30ml"]],
+  ["Fantasi Mad Blu","Frutti di Bosco",["20ml","30ml"]],
+  ["Fantasi","Limone, Pesca e Passion Fruit",["20ml","30ml"]],
+  // Fantasy: tutti 20 o 30 ml
+  ["Fantasy","Mango",["20ml","30ml"]],
+  ["Fantasy","Anguria",["20ml","30ml"]],
+  ["Fantasy","Coca Cola",["20ml","30ml"]],
+  ["Fantasy Lemonade","Limonata",["20ml","30ml"]],
+  ["Fantasy","Lampone Blu e Ciliegia",["20ml","30ml"]],
+  ["Fantasy","Tropicale",["20ml","30ml"]],
+  ["Fantasy","Ribes Nero e Limone",["20ml","30ml"]],
+  ["Fantasy Twist","Arancia, Mela, Pesca e Passion Fruit",["20ml","30ml"]],
+  ["Fantasy","Pesche",["20ml","30ml"]],
+  ["Fantasy","Uva",["20ml","30ml"]],
+  ["Fantasy","Fragole",["20ml","30ml"]],
+  ["Fantasy","Ciliegia",["20ml","30ml"]],
+  ["Fantasy Mojito","Mojito",["20ml","30ml"]],
+  ["Fantasy","Arance",["20ml","30ml"]],
+  ["Fantasy","Lampone Rosso",["20ml","30ml"]],
+  ["Fantasy","Lamponi Blu",["20ml","30ml"]],
+  ["Fantasy","More",["20ml","30ml"]],
+  ["Fantasy Lemonade","Limonata e Mirtilli",["20ml","30ml"]],
+  ["Fantasy Black Grap","Ribes Nero, Mela e Uva",["20ml","30ml"]],
+  ["Fantasy Grap-Straw","Uva e Fragola",["20ml","30ml"]],
+  ["Fantasy Pinea-Grape","Ananas e Pompelmo",["20ml","30ml"]],
+  // Zhumo: tutti solo 30 ml
   ["Zhumo Mamba","Dragon Fruit e Fragola",["30ml"]],
-  ["Zhumo","Mela, Fragola e Pesca",["30ml"]],["Zhumo","Arancia e Pesca",["30ml"]],
-  ["Zhumo","Cocco e Ananas",["30ml"]],["Zhumo","Fragola e Anguria",["30ml"]],
-  ["Zhumo","Uva e Ciliegia",["30ml"]],["Zhumo","Cocco e Melone",["30ml"]],
-  ["Te Amo","Tè Freddo Limone e Pesca",["30ml"]],["Te Amo","Tè Freddo Mango",["30ml"]],
-  ["Te Amo","Tè Freddo Menta",["30ml"]],["Te Amo","Tè Freddo Mirtillo",["30ml"]],
+  ["Zhumo","Mela, Fragola e Pesca",["30ml"]],
+  ["Zhumo","Arancia e Pesca",["30ml"]],
+  ["Zhumo","Cocco e Ananas",["30ml"]],
+  ["Zhumo","Fragola e Anguria",["30ml"]],
+  ["Zhumo","Uva e Ciliegia",["30ml"]],
+  ["Zhumo","Cocco e Melone",["30ml"]],
+  // Te Amo: tutti solo 30 ml
+  ["Te Amo","Tè Freddo Limone e Pesca",["30ml"]],
+  ["Te Amo","Tè Freddo Mango",["30ml"]],
+  ["Te Amo","Tè Freddo Menta",["30ml"]],
+  ["Te Amo","Tè Freddo Mirtillo",["30ml"]],
   ["Te Amo","Tè Freddo Cedro",["30ml"]],
-  ["Calypso NRG","Monster Fragola",["20ml"]],["Calypso NRG","Monster Ananas",["20ml"]],
+  // Calypso NRG: tutti solo 20 ml
+  ["Calypso NRG","Monster Fragola",["20ml"]],
+  ["Calypso NRG","Monster Ananas",["20ml"]],
   ["Calypso NRG","Monster Doppia Mela",["20ml"]],
   ["Calypso NRG","Monster Passion Fruit",["20ml"]],
   ["Calypso NRG","Monster Anguria",["20ml"]],
   ["Calypso NRG","Monster Limone e Lime",["20ml"]],
   ["Calypso","Anguria e Kiwi",["20ml"]],
   ["Calypso","Frutti di Bosco e Agrumi",["20ml"]],
-  ["Fantasi","Caramelle alla Frutta",["20ml","30ml"]],
-  ["Fantasi","Gelato alla Fragola",["20ml","30ml"]],
-  ["Fantasi","Spearmint Menta",["20ml","30ml"]],
-  ["Fantasi","Uva Rossa",["20ml","30ml"]],
-  ["Fantasi","Melone",["20ml","30ml"]],
-  ["Fantasi","Punch Tropicale e Agrumi",["20ml","30ml"]],
-  ["Fantasi","Fragola, Lampone e Ciliegia",["20ml","30ml"]],
-  ["Fantasi","Banana",["20ml","30ml"]],
-  ["Fantasi","Mirtillo e Melone",["20ml","30ml"]],
-  ["Fantasy","Mango",["20ml","30ml"]],["Fantasy","Anguria",["20ml","30ml"]],
-  ["Fantasy","Coca Cola",["20ml","30ml"]],["Fantasy","Limonata",["20ml","30ml"]],
-  ["Fantasy","Lampone Blu e Ciliegia",["20ml","30ml"]],
-  ["Fantasy","Tropicale",["20ml","30ml"]],
-  ["Fantasy","Ribes Nero e Limone",["20ml","30ml"]],
-  ["Fantasy","Arancia, Mela, Pesca e Passion Fruit",["20ml","30ml"]],
-  ["Fantasy","Pesche",["20ml","30ml"]],["Fantasy","Uva",["20ml","30ml"]],
-  ["Fantasy","Fragole",["20ml","30ml"]],["Fantasy","Ciliegia",["20ml","30ml"]],
-  ["Fantasy","Mojito",["20ml","30ml"]],["Fantasy","Arance",["20ml","30ml"]],
-  ["Fantasy","Lampone Rosso",["20ml","30ml"]],
-  ["Fantasy","Lamponi Blu",["20ml","30ml"]],["Fantasy","More",["20ml","30ml"]],
+  // Moon/Star/Spark/Sun Lime: 20 o 30 ml
   ["Moon Lime","Mirtillo e Lime",["20ml","30ml"]],
   ["Star Lime","Ribes e Lime",["20ml","30ml"]],
   ["Spark Lime","Cocco, Fragola e Lime",["20ml","30ml"]],
   ["Sun Lime","Mango, Pesca e Lime",["20ml","30ml"]],
   ["Ment-Liqui","Menta e Liquirizia",["20ml","30ml"]],
+  // 01 Vape: 20 o 30 ml
   ["01 Vape","Mela Verde",["20ml","30ml"]],
   ["01 Vape","Dragon Fruit e Passion Fruit",["20ml","30ml"]],
   ["01 Vape","Mango e Pesca",["20ml","30ml"]],
@@ -965,8 +995,11 @@ Object.entries(CREAM60).forEach(([sub,rows])=>rows.forEach(([b,f])=>add(b,f,'60m
   ["01 Vape","Anguria, Fragola, Menta e Lime",["20ml","30ml"]],
   ["Hungry Mango","Mango",["20ml","30ml"]],
   ["Ficurinia","Fico d'India, Papaya e Lime",["20ml","30ml"]],
+  ["Ficurinia","Papaya, Lime e Fico d'India",["20ml","30ml"]],
   ["Liquiri'","Liquirizia e Limone",["20ml","30ml"]],
-  ["Red Bull","Red Bull",["20ml"]],["Berry Mango","Frutti di Bosco e Mango",["20ml"]],
+  // Solo 20ml (dal doc: 20 ML)
+  ["Red Bull","Red Bull",["20ml"]],
+  ["Berry Mango","Frutti di Bosco e Mango",["20ml"]],
   ["Dragon Peach","Pesca e Dragon Fruit",["20ml"]],
   ["Red Orange","Arancia, Passion Fruit e Fragola",["20ml"]],
   ["Papaya Dragon","Papaya, Dragon Fruit e Lime",["20ml"]],
@@ -974,18 +1007,10 @@ Object.entries(CREAM60).forEach(([sub,rows])=>rows.forEach(([b,f])=>add(b,f,'60m
   ["Red Melon","Melone, Anguria e Fragola",["20ml"]],
   ["Pink Lemonade","Fragola, Limone e Lampone",["20ml"]],
   ["Blueberry","Mirtillo",["20ml"]],
-  ["Fantasi","Limone",["20ml","30ml"]],["Fantasi","Arancia e Mango",["20ml","30ml"]],
-  ["Fantasi","Bubble Gum al Mirtillo",["20ml","30ml"]],
-  ["Fantasi Mad Blu","Frutti di Bosco",["20ml","30ml"]],
-  ["Fantasi","Limone, Pesca e Passion Fruit",["20ml","30ml"]],
-  ["Fantasy","Limonata e Mirtilli",["20ml","30ml"]],
-  ["Fantasy Black Grap","Ribes Nero, Mela e Uva",["20ml","30ml"]],
-  ["Fantasy Grap-Straw","Uva e Fragola",["20ml","30ml"]],
-  ["Fantasy Pinea-Grape","Ananas e Pompelmo",["20ml","30ml"]],
-  ["Ficurinia","Papaya, Lime e Fico d'India",["20ml","30ml"]],
-  ["Kanzi","Melone, Fragola e Kiwi",["20ml","30ml"]],
-  ["Tropicone","Tropicale",["20ml"]],["Pineapple Bomb","Ananas e Cocco",["20ml"]],
+  ["Tropicone","Tropicale",["20ml"]],
+  ["Pineapple Bomb","Ananas e Cocco",["20ml"]],
   ["Fruttolone","Mela, Pera e Banana",["20ml"]],
+  ["Kanzi","Melone, Fragola e Kiwi",["20ml","30ml"]],
 ].forEach(([b,f,t])=>add(b,f,'2030ml','fruit','fruit-2030',t||[]));
 
 /* ── 20-30ML ICE ── */
@@ -1213,14 +1238,14 @@ const SUBS = {
   'tab-cremosi':{label:'Tabacchi Cremosi',            emoji:'🔶', cls:'sh-hybrid', fmt:'60ml', type:'hybrid'},
   /* 20-30ml */
   'fruit-2030':{label:'Fruttati',                    emoji:'🍓', cls:'sh-fruit',  fmt:'2030ml', type:'fruit'},
-  'ice-2030':  {label:'Ice — Fruizee 30ml',           emoji:'❄️', cls:'sh-ice',    fmt:'2030ml', type:'fruit'},
+  'ice-2030':  {label:'Fruizee Extra Ice',           emoji:'❄️', cls:'sh-ice',    fmt:'2030ml', type:'fruit'},
   'cream-2030':{label:'Cremosi',                      emoji:'🍪', cls:'sh-cream',  fmt:'2030ml', type:'cream'},
   'tab-2030':  {label:'Tabacchi',                     emoji:'🚬', cls:'sh-tab',    fmt:'2030ml', type:'tab'},
   /* 10ml */
-  mono:        {label:'Monopolio — 7.50€',            emoji:'🚬', cls:'sh-tab',    fmt:'10ml',   type:'tab'},
+  mono:        {label:'Dreamods / Monopolio — 7.50€',            emoji:'🚬', cls:'sh-tab',    fmt:'10ml',   type:'tab'},
   'cream-10':  {label:'Cremosi — 7.50€',              emoji:'🍪', cls:'sh-cream',  fmt:'10ml',   type:'cream'},
   'fruit-10':  {label:'Fruttati — 7.50€',             emoji:'🍓', cls:'sh-fruit',  fmt:'10ml',   type:'fruit'},
-  elfbar:      {label:'Elfbar / Elfic — 8.50€',       emoji:'⚡', cls:'sh-ice',    fmt:'10ml',   type:'fruit'},
+  elfbar:      {label:'Elfbar / Elfic — sali di nic 8.50€',       emoji:'⚡', cls:'sh-ice',    fmt:'10ml',   type:'fruit'},
 };
 
 const AROMA_OPTS = {
