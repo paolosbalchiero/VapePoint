@@ -5,110 +5,147 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VapePoint — Listino</title>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg: #f5f4f0;
+  --bg: #f7f6f2;
   --white: #ffffff;
-  --dark: #1a1a1a;
-  --mid: #444;
-  --muted: #999;
-  --border: #e0ddd6;
-  --green: #2d7a3a;
-  --green-light: #e8f4ea;
-  --green-mid: #4ca85a;
-  --blue: #1d5fa6;
-  --blue-light: #e8f0fa;
-  --orange: #c05a0a;
-  --orange-light: #fdf0e6;
-  --ice: #0a7c8c;
-  --ice-light: #e6f6f8;
-  --radius: 10px;
+  --dark: #181818;
+  --mid: #555;
+  --muted: #aaa;
+  --border: #e2dfd8;
+  --green: #237a32;
+  --green-l: #e8f5ea;
+  --green-m: #3fa050;
+  --blue: #1a5ca0;
+  --blue-l: #e7effa;
+  --orange: #b85508;
+  --orange-l: #fdf0e5;
+  --ice: #0a7a8a;
+  --ice-l: #e5f5f7;
+  --purple: #6a3aaa;
+  --purple-l: #f0ebfa;
+  --r: 10px;
+  --shadow: 0 2px 12px rgba(0,0,0,.08);
 }
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { background: var(--bg); color: var(--dark); font-family: 'Lato', sans-serif; font-size: 15px; min-height: 100vh; }
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--dark);font-family:'Lato',sans-serif;font-size:15px;min-height:100vh}
 
-header { background: var(–dark); padding: 16px 20px 12px; position: sticky; top: 0; z-index: 200; }
-.header-row { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
-.logo { display: flex; align-items: baseline; line-height: 1; }
-.logo-vape { font-family: ‘Oswald’, sans-serif; font-size: 2rem; font-weight: 700; color: #fff; letter-spacing: 1px; }
-.logo-point { font-family: ‘Oswald’, sans-serif; font-size: 2rem; font-weight: 700; color: var(–green-mid); letter-spacing: 1px; }
-.header-contacts { display: flex; gap: 18px; flex-wrap: wrap; }
-.contact-item { font-size: 0.75rem; color: #aaa; }
-.contact-item strong { color: #fff; margin-right: 4px; }
+/* ── HEADER ── */
+header{background:var(–dark);padding:14px 20px;position:sticky;top:0;z-index:300}
+.hrow{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.logo span:first-child{font-family:‘Oswald’,sans-serif;font-size:1.9rem;font-weight:700;color:#fff;letter-spacing:1px}
+.logo span:last-child{font-family:‘Oswald’,sans-serif;font-size:1.9rem;font-weight:700;color:var(–green-m);letter-spacing:1px}
+.hcontacts{display:flex;gap:16px;flex-wrap:wrap}
+.hc{font-size:.72rem;color:#aaa}.hc strong{color:#fff;margin-right:3px}
 
-.search-wrap { background: var(–white); border-bottom: 2px solid var(–border); position: sticky; top: 58px; z-index: 190; padding: 10px 20px; }
-.search-inner { max-width: 1100px; margin: 0 auto; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
-.search-input { flex: 1; min-width: 180px; border: 2px solid var(–border); border-radius: 8px; padding: 8px 14px; font-family: ‘Lato’, sans-serif; font-size: 1rem; color: var(–dark); background: var(–bg); outline: none; transition: border-color .2s; }
-.search-input:focus { border-color: var(–green); }
-.search-input::placeholder { color: var(–muted); }
-.tabs { display: flex; gap: 6px; flex-wrap: wrap; }
-.tab { padding: 7px 15px; border-radius: 20px; border: 2px solid var(–border); background: transparent; color: var(–mid); font-family: ‘Lato’, sans-serif; font-weight: 700; font-size: 0.8rem; cursor: pointer; transition: all .18s; white-space: nowrap; }
-.tab:hover { border-color: var(–green); color: var(–green); }
-.tab.a-all    { background: var(–dark); border-color: var(–dark); color: #fff; }
-.tab.a-fruit  { background: var(–green); border-color: var(–green); color: #fff; }
-.tab.a-ice    { background: var(–ice); border-color: var(–ice); color: #fff; }
-.tab.a-creamy { background: var(–orange); border-color: var(–orange); color: #fff; }
-.tab.a-tab    { background: var(–blue); border-color: var(–blue); color: #fff; }
+/* ── SEARCH ── */
+.searchbar{background:var(–white);border-bottom:2px solid var(–border);position:sticky;top:54px;z-index:290;padding:10px 20px}
+.sinner{max-width:1100px;margin:0 auto;display:flex;gap:8px;align-items:center}
+.sinput{flex:1;border:2px solid var(–border);border-radius:8px;padding:8px 14px;font-family:‘Lato’,sans-serif;font-size:1rem;color:var(–dark);background:var(–bg);outline:none;transition:border-color .2s}
+.sinput:focus{border-color:var(–green)}
+.sinput::placeholder{color:var(–muted)}
+.clrbtn{background:none;border:none;cursor:pointer;color:var(–muted);font-size:1.2rem;padding:0 4px;display:none}
 
-main { max-width: 1100px; margin: 0 auto; padding: 24px 20px 60px; }
+/* ── MAIN ── */
+main{max-width:1100px;margin:0 auto;padding:24px 20px 60px}
 
-/* PRICE STRIP */
-.price-strip { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 28px; }
-.price-pill { background: var(–white); border: 2px solid var(–border); border-radius: 10px; padding: 12px 16px; text-align: center; flex: 1; min-width: 90px; }
-.price-pill .nic { font-size: 0.68rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(–muted); margin-bottom: 4px; }
-.price-pill .price { font-family: ‘Oswald’, sans-serif; font-size: 2.2rem; font-weight: 700; color: var(–green); line-height: 1; }
-.price-pill .price.sm { font-size: 1.7rem; }
-.price-pill .ml-label { font-size: 0.68rem; color: var(–muted); margin-top: 3px; }
-.price-pill.accent-green { border-color: #b8ddbf; }
-.price-pill.accent-blue  { border-color: #a8c4e4; }
+/* ── LEVEL 1: FORMAT TABS ── */
+.fmt-tabs{display:flex;gap:0;margin-bottom:24px;border-radius:var(–r);overflow:hidden;border:2px solid var(–border);background:var(–white)}
+.fmt-tab{flex:1;padding:14px 10px;text-align:center;cursor:pointer;border:none;background:transparent;font-family:‘Lato’,sans-serif;font-weight:700;font-size:.9rem;color:var(–mid);transition:all .2s;border-right:1px solid var(–border)}
+.fmt-tab:last-child{border-right:none}
+.fmt-tab .price-big{font-family:‘Oswald’,sans-serif;font-size:1.6rem;font-weight:700;color:var(–green);display:block;line-height:1}
+.fmt-tab .price-sub{font-size:.65rem;color:var(–muted);display:block;margin-top:2px}
+.fmt-tab.active{background:var(–dark);color:#fff}
+.fmt-tab.active .price-big{color:var(–green-m)}
+.fmt-tab.active .price-sub{color:#aaa}
+.fmt-tab:hover:not(.active){background:var(–bg)}
 
-.result-info { font-size: 0.82rem; color: var(–muted); margin-bottom: 18px; }
-.result-info strong { color: var(–green); }
+/* ── PRICE DETAIL PANEL ── */
+.price-panel{background:var(–white);border:2px solid var(–border);border-radius:var(–r);padding:16px 18px;margin-bottom:20px}
+.price-panel-title{font-family:‘Oswald’,sans-serif;font-size:.8rem;letter-spacing:2px;text-transform:uppercase;color:var(–muted);margin-bottom:12px}
+.price-grid{display:flex;gap:8px;flex-wrap:wrap}
+.ppill{background:var(–bg);border:2px solid var(–border);border-radius:8px;padding:10px 14px;text-align:center;min-width:80px;flex:1}
+.ppill .pn{font-size:.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(–muted);margin-bottom:3px}
+.ppill .pv{font-family:‘Oswald’,sans-serif;font-size:1.9rem;font-weight:700;color:var(–green);line-height:1}
+.ppill .ps{font-size:.62rem;color:var(–muted);margin-top:2px}
 
-/* SECTION */
-.section { margin-bottom: 28px; }
-.section-head { display: flex; align-items: center; gap: 12px; padding: 14px 20px; border-radius: var(–radius) var(–radius) 0 0; }
-.section-emoji { font-size: 1.4rem; line-height: 1; }
-.section-title { font-family: ‘Oswald’, sans-serif; font-size: 1.5rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; line-height: 1; }
-.section-subtitle { font-size: 0.75rem; opacity: .7; margin-top: 2px; }
-.section-badge { margin-left: auto; font-family: ‘Oswald’, sans-serif; font-size: 1rem; font-weight: 500; opacity: .55; }
-.sh-fruit  { background: var(–green-light); color: var(–green); border: 2px solid #b8ddbf; }
-.sh-ice    { background: var(–ice-light); color: var(–ice); border: 2px solid #a8d8e0; }
-.sh-creamy { background: var(–orange-light); color: var(–orange); border: 2px solid #e8c09a; }
-.sh-tab    { background: var(–blue-light); color: var(–blue); border: 2px solid #a8c4e4; }
+/* ── LEVEL 2: AROMA TYPE ── */
+.aroma-tabs{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap}
+.atab{padding:10px 20px;border-radius:30px;border:2px solid var(–border);background:var(–white);color:var(–mid);font-family:‘Lato’,sans-serif;font-weight:700;font-size:.85rem;cursor:pointer;transition:all .18s;white-space:nowrap;display:flex;align-items:center;gap:6px}
+.atab:hover{border-color:currentColor}
+.atab.active-fruit{background:var(–green);border-color:var(–green);color:#fff}
+.atab.active-cream{background:var(–orange);border-color:var(–orange);color:#fff}
+.atab.active-tab{background:var(–blue);border-color:var(–blue);color:#fff}
+.atab.active-hybrid{background:var(–purple);border-color:var(–purple);color:#fff}
 
-.section-body { background: var(–white); border: 2px solid var(–border); border-top: none; border-radius: 0 0 var(–radius) var(–radius); padding: 14px 16px 18px; }
-.items-grid-wrap { background: var(–white); border: 2px solid var(–border); border-top: none; border-radius: 0 0 var(–radius) var(–radius); padding: 14px; }
+/* ── TOP FLAVORS (BUBBLE SYSTEM) ── */
+.tops-section{margin-bottom:18px}
+.tops-label{font-size:.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(–muted);margin-bottom:8px}
+.tops-bubbles{display:flex;gap:6px;flex-wrap:wrap}
+.bubble{padding:6px 14px;border-radius:20px;border:2px solid var(–border);background:var(–white);color:var(–mid);font-family:‘Lato’,sans-serif;font-weight:700;font-size:.8rem;cursor:pointer;transition:all .15s;user-select:none;display:flex;align-items:center;gap:5px}
+.bubble .bcount{font-size:.65rem;background:var(–bg);border-radius:8px;padding:1px 5px;color:var(–muted)}
+.bubble:hover{border-color:#999;color:var(–dark)}
+.bubble.sel{background:var(–dark);border-color:var(–dark);color:#fff}
+.bubble.sel .bcount{background:rgba(255,255,255,.15);color:#ddd}
 
-/* SUBSECTION */
-.sub-label { font-family: ‘Oswald’, sans-serif; font-size: 0.82rem; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(–muted); padding: 14px 2px 6px; border-bottom: 1px solid var(–border); margin-bottom: 10px; }
-.sub-label:first-child { padding-top: 2px; }
+/* Related suggestions */
+.related-bar{display:none;background:var(–white);border:2px solid var(–border);border-radius:var(–r);padding:12px 14px;margin-bottom:14px}
+.related-bar.show{display:block}
+.rel-label{font-size:.7rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(–muted);margin-bottom:8px}
+.rel-pills{display:flex;gap:6px;flex-wrap:wrap}
+.rpill{padding:5px 12px;border-radius:15px;background:var(–bg);border:1.5px solid var(–border);font-size:.78rem;font-weight:700;color:var(–mid);cursor:pointer;transition:all .15s}
+.rpill:hover{background:var(–dark);border-color:var(–dark);color:#fff}
 
-/* GRID */
-.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 7px; margin-bottom: 4px; }
+/* ── SUBSECTION LABEL ── */
+.sub-lbl{font-family:‘Oswald’,sans-serif;font-size:.82rem;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(–muted);padding:14px 2px 6px;border-bottom:1px solid var(–border);margin-bottom:10px}
+.sub-lbl:first-child{padding-top:4px}
 
-/* CARD */
-.card { background: var(–bg); border: 1.5px solid var(–border); border-radius: 8px; padding: 10px 13px; cursor: default; transition: border-color .15s, box-shadow .15s; display: flex; flex-direction: column; gap: 2px; }
-.card:hover { border-color: #b0b0b0; box-shadow: 0 2px 8px rgba(0,0,0,.07); }
-.card-flavor { font-family: ‘Oswald’, sans-serif; font-size: 1.05rem; font-weight: 600; color: var(–dark); line-height: 1.25; }
-.card-brand { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; color: var(–muted); line-height: 1; }
-.card-tags { display: flex; gap: 4px; flex-wrap: wrap; margin-top: 5px; }
-.ctag { font-size: 0.62rem; font-weight: 700; padding: 2px 7px; border-radius: 10px; text-transform: uppercase; letter-spacing: 0.3px; }
-.ctag-ice   { background: var(–ice-light); color: var(–ice); }
-.ctag-fresh { background: var(–green-light); color: var(–green); }
-.ctag-size  { background: #f0f0f0; color: #777; }
-.ctag-nic   { background: #fdf5e0; color: #9a7a00; }
+/* ── SECTION ── */
+.section{margin-bottom:6px;display:none}
+.section.show{display:block}
+.sec-head{display:flex;align-items:center;gap:10px;padding:12px 18px;border-radius:var(–r) var(–r) 0 0}
+.sec-emoji{font-size:1.3rem}
+.sec-title{font-family:‘Oswald’,sans-serif;font-size:1.35rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;line-height:1}
+.sec-sub{font-size:.72rem;opacity:.7;margin-top:1px}
+.sec-badge{margin-left:auto;font-family:‘Oswald’,sans-serif;font-size:.95rem;font-weight:500;opacity:.55}
+.sh-fruit{background:var(–green-l);color:var(–green);border:2px solid #b5daba}
+.sh-cream{background:var(–orange-l);color:var(–orange);border:2px solid #e8c09a}
+.sh-tab{background:var(–blue-l);color:var(–blue);border:2px solid #a5c3e3}
+.sh-hybrid{background:var(–purple-l);color:var(–purple);border:2px solid #c0a5e0}
+.sh-ice{background:var(–ice-l);color:var(–ice);border:2px solid #9acfd6}
+.sec-body{background:var(–white);border:2px solid var(–border);border-top:none;border-radius:0 0 var(–r) var(–r);padding:14px 16px 16px;margin-bottom:20px}
 
-.empty-state { text-align: center; padding: 80px 20px; color: var(–muted); font-family: ‘Oswald’, sans-serif; font-size: 1.3rem; letter-spacing: 2px; }
-.hidden { display: none !important; }
+/* ── GRID ── */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:7px;margin-bottom:6px}
 
-@media (max-width: 600px) {
-.grid { grid-template-columns: 1fr 1fr; }
-.price-pill .price { font-size: 1.6rem; }
-.price-pill .price.sm { font-size: 1.3rem; }
-.logo-vape, .logo-point { font-size: 1.6rem; }
-.section-title { font-size: 1.2rem; }
+/* ── CARD ── */
+.card{background:var(–bg);border:1.5px solid var(–border);border-radius:8px;padding:10px 13px;cursor:default;transition:border-color .15s,box-shadow .15s;display:flex;flex-direction:column;gap:2px}
+.card:hover{border-color:#b0b0b0;box-shadow:0 2px 8px rgba(0,0,0,.07)}
+.card.hidden{display:none}
+.card-flavor{font-family:‘Oswald’,sans-serif;font-size:1.05rem;font-weight:600;color:var(–dark);line-height:1.25}
+.card-brand{font-size:.7rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(–muted);line-height:1}
+.card-tags{display:flex;gap:4px;flex-wrap:wrap;margin-top:5px}
+.ctag{font-size:.6rem;font-weight:700;padding:2px 7px;border-radius:10px;text-transform:uppercase;letter-spacing:.3px}
+.ctag-ice{background:var(–ice-l);color:var(–ice)}
+.ctag-fresh{background:var(–green-l);color:var(–green)}
+.ctag-size{background:#f0f0f0;color:#777}
+.ctag-nic{background:#fdf5e0;color:#9a7a00}
+.ctag-nofresh{background:#f5ece0;color:#8a6a30}
+
+/* ── EMPTY ── */
+.empty-state{text-align:center;padding:60px 20px;color:var(–muted);font-family:‘Oswald’,sans-serif;font-size:1.1rem;letter-spacing:2px;display:none}
+.empty-state.show{display:block}
+.result-info{font-size:.8rem;color:var(–muted);margin-bottom:16px;min-height:18px}
+.result-info strong{color:var(–green)}
+
+.hidden{display:none!important}
+
+@media(max-width:640px){
+.grid{grid-template-columns:1fr 1fr}
+.fmt-tab .price-big{font-size:1.3rem}
+.fmt-tabs{flex-wrap:wrap}
+.fmt-tab{border-right:none;border-bottom:1px solid var(–border)}
 }
 </style>
 
@@ -116,718 +153,1067 @@ main { max-width: 1100px; margin: 0 auto; padding: 24px 20px 60px; }
 <body>
 
 <header>
-  <div class="header-row">
-    <div class="logo"><span class="logo-vape">Vape</span><span class="logo-point">Point</span></div>
-    <div class="header-contacts">
-      <div class="contact-item"><strong>TEL</strong>0444.251517</div>
-      <div class="contact-item"><strong>MOB</strong>334.1109194</div>
-      <div class="contact-item"><strong>MAIL</strong>vapepoint@outlook.it</div>
+  <div class="hrow">
+    <div class="logo"><span>Vape</span><span>Point</span></div>
+    <div class="hcontacts">
+      <div class="hc"><strong>TEL</strong>0444.251517</div>
+      <div class="hc"><strong>MOB</strong>334.1109194</div>
+      <div class="hc"><strong>MAIL</strong>vapepoint@outlook.it</div>
     </div>
   </div>
 </header>
 
-<div class="search-wrap">
-  <div class="search-inner">
-    <input class="search-input" type="text" id="searchInput" placeholder="🔍  Cerca sapore, brand, ingrediente…" oninput="filterAll()">
-    <div class="tabs">
-      <button class="tab a-all" onclick="setTab(this,'all')">Tutti</button>
-      <button class="tab" onclick="setTab(this,'fruit')">🍓 Fruttati</button>
-      <button class="tab" onclick="setTab(this,'ice')">❄️ Ice</button>
-      <button class="tab" onclick="setTab(this,'creamy')">🍪 Cremosi</button>
-      <button class="tab" onclick="setTab(this,'tab')">🚬 Tabacchi</button>
-    </div>
+<div class="searchbar">
+  <div class="sinner">
+    <input class="sinput" type="text" id="searchInput" placeholder="🔍  Cerca sapore, ingrediente, brand…" oninput="onSearch()">
+    <button class="clrbtn" id="clrBtn" onclick="clearSearch()">✕</button>
   </div>
 </div>
 
 <main>
   <div id="resultInfo" class="result-info"></div>
 
-  <!-- PREZZI 60ml -->
+  <!-- LEVEL 1: FORMATO -->
 
-  <div class="price-strip" id="priceStrip">
-    <div class="price-pill"><div class="nic">0 mg</div><div class="price">25€</div><div class="ml-label">60 ml</div></div>
-    <div class="price-pill"><div class="nic">3–4 mg</div><div class="price">30€</div><div class="ml-label">60 ml</div></div>
-    <div class="price-pill"><div class="nic">5–7 mg</div><div class="price">33€</div><div class="ml-label">60 ml</div></div>
-    <div class="price-pill"><div class="nic">8–11 mg</div><div class="price">35€</div><div class="ml-label">60 ml</div></div>
-    <div class="price-pill"><div class="nic">12+ mg</div><div class="price">38€</div><div class="ml-label">60 ml</div></div>
-    <div class="price-pill accent-green"><div class="nic">20 ml</div><div class="price sm">14€</div><div class="ml-label">listino</div></div>
-    <div class="price-pill accent-green"><div class="nic">30 ml</div><div class="price sm">19€</div><div class="ml-label">listino</div></div>
-    <div class="price-pill accent-blue"><div class="nic">10 ml</div><div class="price sm">7.50€</div><div class="ml-label">monopolio</div></div>
-    <div class="price-pill accent-blue"><div class="nic">elfbar</div><div class="price sm">8.50€</div><div class="ml-label">10 ml</div></div>
+  <div class="fmt-tabs" id="fmtTabs">
+    <button class="fmt-tab active" onclick="setFmt(this,'60ml')">
+      <span style="font-size:.75rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:inherit">60 ML</span>
+      <span class="price-big" style="margin-top:4px">25→38€</span>
+      <span class="price-sub">in base alla nicotina</span>
+    </button>
+    <button class="fmt-tab" onclick="setFmt(this,'20-30ml')">
+      <span style="font-size:.75rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:inherit">20 / 30 ML</span>
+      <span class="price-big" style="margin-top:4px">14 / 19€</span>
+      <span class="price-sub">già pronti con nic</span>
+    </button>
+    <button class="fmt-tab" onclick="setFmt(this,'10ml')">
+      <span style="font-size:.75rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:inherit">10 ML</span>
+      <span class="price-big" style="margin-top:4px">7.50 / 8.50€</span>
+      <span class="price-sub">pronti con sali di nic</span>
+    </button>
   </div>
 
-  <!-- FRUTTATI -->
+  <!-- PRICE DETAIL PANEL -->
 
-  <div class="section" data-cat="fruit" id="sec-fruit">
-    <div class="section-head sh-fruit">
-      <span class="section-emoji">🍓</span>
-      <div><div class="section-title">Fruttati</div><div class="section-subtitle">60 ml</div></div>
-      <div class="section-badge" id="cnt-fruit"></div>
-    </div>
-    <div class="section-body">
-      <div class="sub-label">Fresh</div>
-      <div class="grid" id="grid-fresh"></div>
-      <div class="sub-label">No Fresh · No Menta</div>
-      <div class="grid" id="grid-nofresh"></div>
+  <div class="price-panel" id="pricePanel60">
+    <div class="price-panel-title">Prezzi 60ml — in base alla nicotina</div>
+    <div class="price-grid">
+      <div class="ppill"><div class="pn">0 mg</div><div class="pv">25€</div></div>
+      <div class="ppill"><div class="pn">3–4 mg</div><div class="pv">30€</div></div>
+      <div class="ppill"><div class="pn">5–7 mg</div><div class="pv">33€</div></div>
+      <div class="ppill"><div class="pn">8–11 mg</div><div class="pv">35€</div></div>
+      <div class="ppill"><div class="pn">12+ mg</div><div class="pv">38€</div></div>
     </div>
   </div>
-
-  <!-- ICE -->
-
-  <div class="section" data-cat="ice" id="sec-ice">
-    <div class="section-head sh-ice">
-      <span class="section-emoji">❄️</span>
-      <div><div class="section-title">Extra Ice & Fruizee</div><div class="section-subtitle">60 ml · 30 ml</div></div>
-      <div class="section-badge" id="cnt-ice"></div>
+  <div class="price-panel hidden" id="pricePanel2030">
+    <div class="price-panel-title">Prezzi 20ml / 30ml — già con nicotina</div>
+    <div class="price-grid">
+      <div class="ppill"><div class="pn">20 ml</div><div class="pv">14€</div><div class="ps">pronto con nic</div></div>
+      <div class="ppill"><div class="pn">30 ml</div><div class="pv">19€</div><div class="ps">pronto con nic</div></div>
     </div>
-    <div class="items-grid-wrap"><div class="grid" id="grid-ice"></div></div>
   </div>
-
-  <!-- CREMOSI -->
-
-  <div class="section" data-cat="creamy" id="sec-creamy">
-    <div class="section-head sh-creamy">
-      <span class="section-emoji">🍪</span>
-      <div><div class="section-title">Cremosi & Dolci</div><div class="section-subtitle">60 ml · 20/30 ml</div></div>
-      <div class="section-badge" id="cnt-creamy"></div>
-    </div>
-    <div class="section-body">
-      <div class="sub-label">Biscotto · Donut · Croissant</div>
-      <div class="grid" id="grid-biscotto"></div>
-      <div class="sub-label">Cereali · Snack</div>
-      <div class="grid" id="grid-cereali"></div>
-      <div class="sub-label">Cheesecake · Torte · Babà</div>
-      <div class="grid" id="grid-torte"></div>
-      <div class="sub-label">Pop Corn</div>
-      <div class="grid" id="grid-popcorn"></div>
-      <div class="sub-label">Crema · Vaniglia · Cioccolato</div>
-      <div class="grid" id="grid-crema"></div>
-      <div class="sub-label">Gelati</div>
-      <div class="grid" id="grid-gelati"></div>
-      <div class="sub-label">Dubai Chocolate</div>
-      <div class="grid" id="grid-dubai"></div>
+  <div class="price-panel hidden" id="pricePanel10">
+    <div class="price-panel-title">Prezzi 10ml — sali di nicotina</div>
+    <div class="price-grid">
+      <div class="ppill"><div class="pn">Monopolio</div><div class="pv">7.50€</div><div class="ps">10ml</div></div>
+      <div class="ppill"><div class="pn">Elfbar / Elfic</div><div class="pv">8.50€</div><div class="ps">10ml</div></div>
     </div>
   </div>
 
-  <!-- TABACCHI -->
+  <!-- LEVEL 2: TIPO AROMA -->
 
-  <div class="section" data-cat="tab" id="sec-tab">
-    <div class="section-head sh-tab">
-      <span class="section-emoji">🚬</span>
-      <div><div class="section-title">Tabacchi</div><div class="section-subtitle">20 ml · 30 ml · 10 ml Monopolio · Elfbar</div></div>
-      <div class="section-badge" id="cnt-tab"></div>
-    </div>
-    <div class="section-body">
-      <div class="sub-label">Dolci</div><div class="grid" id="grid-tab-dolci"></div>
-      <div class="sub-label">Equilibrati</div><div class="grid" id="grid-tab-equil"></div>
-      <div class="sub-label">Secchi</div><div class="grid" id="grid-tab-secchi"></div>
-      <div class="sub-label">Cremosi</div><div class="grid" id="grid-tab-cremosi"></div>
-      <div class="sub-label">Fruttati</div><div class="grid" id="grid-tab-fruttati"></div>
-      <div class="sub-label">Mentolati</div><div class="grid" id="grid-tab-menta"></div>
-      <div class="sub-label">Con Alcolici</div><div class="grid" id="grid-tab-alcolici"></div>
-      <div class="sub-label">Estratti a Freddo</div><div class="grid" id="grid-tab-estratti"></div>
-      <div class="sub-label">Sigari Speciali <span style="font-size:.68rem;background:#e8f0fa;color:var(--blue);padding:2px 8px;border-radius:10px;margin-left:6px">+3€</span></div><div class="grid" id="grid-tab-sigari"></div>
-      <div class="sub-label">Monopolio 10ml — 7.50€</div><div class="grid" id="grid-tab-mono"></div>
-      <div class="sub-label">Elfbar & Don Cristo 10ml — 8.50€</div><div class="grid" id="grid-tab-elfbar"></div>
-    </div>
+  <div class="aroma-tabs" id="aromaTabs"></div>
+
+  <!-- TOP FLAVORS -->
+
+  <div class="tops-section" id="topsSection">
+    <div class="tops-label">🔥 Sapori più cercati — clicca per filtrare, combinali insieme</div>
+    <div class="tops-bubbles" id="topsBubbles"></div>
   </div>
 
-  <div id="emptyState" class="empty-state hidden">Nessun risultato trovato 😕</div>
+  <!-- RELATED -->
+
+  <div class="related-bar" id="relatedBar">
+    <div class="rel-label">Prova anche con…</div>
+    <div class="rel-pills" id="relatedPills"></div>
+  </div>
+
+  <!-- SECTIONS -->
+
+  <div id="sectionsContainer"></div>
+  <div class="empty-state" id="emptyState">Nessun risultato trovato 😕</div>
 </main>
 
 <script>
-const DATA = {
-  fresh: [
-    {brand:"Delicius",flavor:"Mirtillo e Lampone",tags:["fresh"]},
-    {brand:"Delicius",flavor:"Lampone, Mora e Mirtilli",tags:["fresh"]},
-    {brand:"Delicius",flavor:"Bubble Gum al Mirtillo",tags:[]},
-    {brand:"Delicius",flavor:"Mojito Dolce",tags:["fresh"]},
-    {brand:"Shinobi Killer",flavor:"Frutti di Bosco e Melone",tags:[]},
-    {brand:"Shinobi",flavor:"Papaya e Fico d'India",tags:[]},
-    {brand:"Shinobi Revenge",flavor:"Pesca e Dragon Fruit",tags:[]},
-    {brand:"Shinobi Ice",flavor:"Papaya e Fico d'India",tags:["fresh"]},
-    {brand:"Steam",flavor:"Pesca e Anguria",tags:[]},
-    {brand:"Steam",flavor:"Caramella alla Fragola",tags:[]},
-    {brand:"Steam",flavor:"Doppia Mela da Narghilè",tags:[]},
-    {brand:"Steam",flavor:"Arancia e Passion Fruit",tags:["fresh"]},
-    {brand:"Fantasi",flavor:"Mela",tags:["fresh"]},
-    {brand:"Fantasi",flavor:"Blueberry",tags:["fresh"]},
-    {brand:"Fantasi",flavor:"Anguria e Ciliegia",tags:["fresh"]},
-    {brand:"Fantasi",flavor:"Gummy Bear",tags:["fresh"]},
-    {brand:"Fantasi",flavor:"Banana",tags:["fresh"]},
-    {brand:"Fantasi",flavor:"Punch Tropicale e Agrumi",tags:["fresh"]},
-    {brand:"Fantasi",flavor:"Uva Rossa",tags:["fresh"]},
-    {brand:"Fantasi",flavor:"Melone",tags:["fresh"]},
-    {brand:"Fantasi",flavor:"Red Bull",tags:["fresh"]},
-    {brand:"Fantasi",flavor:"Spearmint Menta",tags:["fresh"]},
-    {brand:"Fantasi",flavor:"Fragola, Lampone e Ciliegia",tags:["fresh"]},
-    {brand:"Fantasi",flavor:"Gelato alla Fragola",tags:["fresh"]},
-    {brand:"Fantasi",flavor:"Lime Mojito",tags:["fresh"]},
-    {brand:"Fantasi",flavor:"Coca Cola",tags:["fresh"]},
-    {brand:"Fantasi",flavor:"Mirtillo e Melone",tags:["fresh"]},
-    {brand:"Fantasi",flavor:"Mango",tags:["fresh"]},
-    {brand:"Fantasi",flavor:"Anguria",tags:["fresh"]},
-    {brand:"Fantasi",flavor:"Lampone Blu e Ciliegia",tags:["fresh"]},
-    {brand:"Fantasi",flavor:"Tropicale",tags:["fresh"]},
-    {brand:"Fantasi",flavor:"Ribes Nero e Limone",tags:["fresh"]},
-    {brand:"Fantasi",flavor:"Arancia, Mela, Pesca e Passion Fruit",tags:["fresh"]},
-    {brand:"Fantasi",flavor:"Pesche",tags:["fresh"]},
-    {brand:"Fantasi",flavor:"Uva",tags:["fresh"]},
-    {brand:"Fantasi",flavor:"Fragole",tags:["fresh"]},
-    {brand:"Fantasi",flavor:"Ciliegie",tags:["fresh"]},
-    {brand:"Fantasi",flavor:"Arance",tags:["fresh"]},
-    {brand:"Fantasi",flavor:"Lampone Rosso",tags:["fresh"]},
-    {brand:"Fantasi",flavor:"Lampone Blu",tags:["fresh"]},
-    {brand:"Fantasi",flavor:"More",tags:["fresh"]},
-    {brand:"Te Amo",flavor:"Tè Freddo Limone e Pesca",tags:[]},
-    {brand:"Te Amo",flavor:"Tè Freddo Mango",tags:[]},
-    {brand:"Te Amo",flavor:"Tè Freddo Menta",tags:[]},
-    {brand:"Te Amo",flavor:"Tè Freddo Mirtillo",tags:[]},
-    {brand:"Te Amo",flavor:"Tè Freddo Cedro",tags:[]},
-    {brand:"Calypso NRG",flavor:"Monster Fragola",tags:["fresh"]},
-    {brand:"Calypso NRG",flavor:"Monster Ananas",tags:["fresh"]},
-    {brand:"Calypso NRG",flavor:"Monster Doppia Mela",tags:["fresh"]},
-    {brand:"Calypso NRG",flavor:"Monster Passion Fruit",tags:["fresh"]},
-    {brand:"Calypso NRG",flavor:"Monster Anguria",tags:["fresh"]},
-    {brand:"Calypso NRG",flavor:"Monster Limone e Lime",tags:["fresh"]},
-    {brand:"Calypso",flavor:"Anguria e Kiwi",tags:["fresh"]},
-    {brand:"Calypso",flavor:"Mela e Uva",tags:["fresh"]},
-    {brand:"Ice Club",flavor:"Fragola e Banana",tags:["fresh"]},
-    {brand:"Ice Club",flavor:"Passion Fruit e Pesca",tags:["fresh"]},
-    {brand:"Ice Club",flavor:"Miele e Limone",tags:["fresh"]},
-    {brand:"Ice Club",flavor:"Albicocca",tags:["fresh"]},
-    {brand:"Ice Club",flavor:"Limone e Cocco",tags:["fresh"]},
-    {brand:"Amalfi",flavor:"Gin e Limone",tags:["fresh"]},
-    {brand:"Frizzy Bear",flavor:"Orsetti Gommosi Frizzanti",tags:["fresh"]},
-    {brand:"Menta Ice",flavor:"Menta",tags:["fresh"]},
-    {brand:"Raspberry Punch",flavor:"Lampone",tags:["fresh"]},
-    {brand:"Mintaia",flavor:"Menta e Ananas",tags:["fresh"]},
-    {brand:"Mintaia",flavor:"Menta e Lampone",tags:["fresh"]},
-    {brand:"Mintaia",flavor:"Menta e Ribes",tags:["fresh"]},
-    {brand:"Mintaia",flavor:"Menta e Fragola",tags:["fresh"]},
-    {brand:"Mintaia",flavor:"Menta e Dragon Fruit",tags:[]},
-    {brand:"Lemon Time",flavor:"Limonata e Pesca",tags:["fresh"]},
-    {brand:"Lemon Time",flavor:"Limonata e Zenzero",tags:["fresh"]},
-    {brand:"Lemon Time",flavor:"Limonata e Lampone Blu",tags:["fresh"]},
-    {brand:"Lemon Time",flavor:"Fragola, Ananas e Limone",tags:["fresh"]},
-    {brand:"Lemon Time",flavor:"Uva Verde e Limone",tags:["fresh"]},
-    {brand:"Lemon Time",flavor:"Mango e Limone",tags:["fresh"]},
-    {brand:"Lemon Time",flavor:"Anguria e Limone",tags:["fresh"]},
-    {brand:"Lemon Time",flavor:"Dragon Fruit e Limone",tags:["fresh"]},
-    {brand:"Lemon Time",flavor:"Arancia e Limone",tags:["fresh"]},
-    {brand:"Lemon Time",flavor:"Limonata",tags:["fresh"]},
-    {brand:"Lemon Time",flavor:"Frutti Rossi e Limone",tags:["fresh"]},
-    {brand:"Lemon Time",flavor:"Mirtillo e Limone",tags:["fresh"]},
-    {brand:"Zhumo",flavor:"Cocco e Melone",tags:["fresh"]},
-    {brand:"Zhumo",flavor:"Ananas, Pesca e Mango",tags:["fresh"]},
-    {brand:"Zhumo",flavor:"Fragola e Anguria",tags:["fresh"]},
-    {brand:"Zhumo",flavor:"Mela, Fragola e Pesca",tags:["fresh"]},
-    {brand:"Zhumo Mamba",flavor:"Dragon Fruit e Fragola",tags:["fresh"]},
-    {brand:"Zhumo",flavor:"Ananas e Cocco",tags:["fresh"]},
-    {brand:"Zhumo",flavor:"Arancia e Pesca",tags:["fresh"]},
-    {brand:"Travolgente",flavor:"Ghiacciolo Fior di Fragola",tags:["fresh"]},
-    {brand:"Persuasivo",flavor:"Tè Freddo Pesca",tags:["fresh"]},
-    {brand:"Nostalgico",flavor:"Tè Freddo Limone",tags:["fresh"]},
-    {brand:"Passionale",flavor:"Gelato Exotic",tags:["fresh"]},
-    {brand:"Competitivo",flavor:"Fico d'India, Pera e Melone",tags:["fresh"]},
-    {brand:"Affabile",flavor:"Anguria, Lampone e Melone",tags:["fresh"]},
-    {brand:"Pacha Mama",flavor:"Melone Verde e Frutti di Bosco",tags:["fresh"]},
-    {brand:"Ice Tea",flavor:"Tè Pesca",tags:["fresh"]},
-    {brand:"Ice Tea",flavor:"Tè Limone",tags:["fresh"]},
-    {brand:"Berry Mango",flavor:"Mirtillo, Lampone e Mango",tags:["fresh"]},
-    {brand:"Red Orange",flavor:"Arancia, Passion Fruit e Fragola",tags:["fresh"]},
-    {brand:"Tropic Fruit",flavor:"Dragon Fruit, Mirtillo e Ananas",tags:["fresh"]},
-    {brand:"Moon Lime",flavor:"Mirtillo e Lime",tags:["fresh"]},
-    {brand:"Star Lime",flavor:"Ribes e Lime",tags:["fresh"]},
-    {brand:"Spark Lime",flavor:"Cocco, Fragola e Lime",tags:["fresh"]},
-    {brand:"Sun Lime",flavor:"Mango, Pesca e Lime",tags:["fresh"]},
-    {brand:"Elfbar",flavor:"Lampone, Fragola e Ciliegia",tags:["fresh"]},
-    {brand:"Elfbar",flavor:"Menta",tags:["fresh"]},
-    {brand:"Elfbar",flavor:"Cotton Candy",tags:["fresh"]},
-    {brand:"Supreme",flavor:"Fragola e Kiwi",tags:["fresh"]},
-    {brand:"Red Bull",flavor:"Red Bull",tags:["fresh"]},
-    {brand:"Reef",flavor:"Mix di Frutta Acidula",tags:["fresh"]},
-    {brand:"Round Fruit",flavor:"Pesca, Anguria e Kiwi",tags:["fresh"]},
-    {brand:"Red Astaire",flavor:"Frutti Rossi e Mentolo",tags:[]},
-    {brand:"Vampire Vape",flavor:"Mix di Frutta",tags:["fresh"]},
-    {brand:"Vampire Vape",flavor:"Frutta e Arancia",tags:["fresh"]},
-    {brand:"Vampire Vape",flavor:"Frutta e Uva",tags:["fresh"]},
-    {brand:"Vampire Vape",flavor:"Frutta, Ciliegia e Dragon Fruit",tags:["fresh"]},
-    {brand:"Weps",flavor:"Soda agli Agrumi",tags:["fresh"]},
-    {brand:"Menta Supreme",flavor:"Menta Glaciale",tags:[]},
-    {brand:"Blue Mint",flavor:"Mentolo, Liquirizia e Anice",tags:[]},
-    {brand:"Ment-Liqui",flavor:"Menta e Liquirizia",tags:[]},
-  ],
-  nofresh: [
-    {brand:"Fantasi",flavor:"Limone",tags:[]},
-    {brand:"Fantasi",flavor:"Arancia e Mango",tags:[]},
-    {brand:"Fantasi Mad Blu",flavor:"Frutti di Bosco",tags:[]},
-    {brand:"Fantasi",flavor:"Bubble Gum al Mirtillo",tags:[]},
-    {brand:"Fantasi",flavor:"Limone, Passion Fruit e Pesca",tags:[]},
-    {brand:"Fantasy Black Grap",flavor:"Ribes Nero, Mela e Uva",tags:[]},
-    {brand:"Fantasy Grap-Straw",flavor:"Uva e Fragola",tags:[]},
-    {brand:"Fantasy Pinea-Grape",flavor:"Ananas e Pompelmo",tags:[]},
-    {brand:"Elfbar",flavor:"Kiwi, Passion Fruit e Guava",tags:[]},
-    {brand:"Elfbar",flavor:"Anguria",tags:[]},
-    {brand:"Elfbar Blackberry",flavor:"Mora e Limone",tags:[]},
-    {brand:"Elfbar",flavor:"Mirtillo e Frutti di Bosco",tags:[]},
-    {brand:"Elfbar",flavor:"Limone e Frutti Rossi",tags:[]},
-    {brand:"Elfbar",flavor:"Coca Cola",tags:[]},
-    {brand:"Don Cristo",flavor:"Mela Rossa",tags:[]},
-    {brand:"Tropicone",flavor:"Mix Esotico Tropicale",tags:[]},
-    {brand:"Fruttolone",flavor:"Mela, Pera e Banana",tags:[]},
-    {brand:"Nairobi",flavor:"Mango, Ananas e Champagne",tags:[]},
-    {brand:"Pineapple Bomb",flavor:"Cocco e Ananas",tags:[]},
-    {brand:"Bloody Summer",flavor:"Frutti Rossi, Ribes, Uva e Fragola",tags:[]},
-    {brand:"Citron",flavor:"Limone, Arancia e Mandarino",tags:[]},
-    {brand:"Crazy Mango",flavor:"5 Tipi di Mango",tags:[]},
-    {brand:"Nerissima",flavor:"Liquirizia",tags:[]},
-  ],
-  ice: [
-    {brand:"Extra Ice",flavor:"Piña Colada — Cocco e Ananas",tags:["ice"]},
-    {brand:"Extra Ice",flavor:"Kiwi, Passion Fruit e Guava",tags:["ice"]},
-    {brand:"Extra Ice",flavor:"Fragola",tags:["ice"]},
-    {brand:"Extra Ice",flavor:"Limone",tags:["ice"]},
-    {brand:"Extra Ice",flavor:"Melone",tags:["ice"]},
-    {brand:"Extra Ice",flavor:"Anguria",tags:["ice"]},
-    {brand:"Extra Ice",flavor:"Frutti di Bosco",tags:["ice"]},
-    {brand:"Extra Ice",flavor:"Mela",tags:["ice"]},
-    {brand:"Extra Ice",flavor:"Mirtillo e Lampone",tags:["ice"]},
-    {brand:"Extra Ice",flavor:"Fragola, Lampone e Ciliegia",tags:["ice"]},
-    {brand:"Glacial Melon",flavor:"Melone e Limone",tags:["ice"]},
-    {brand:"Fruizee",flavor:"5 Tipi di Mango",tags:["ice"]},
-    {brand:"Fruizee Citron",flavor:"Limone, Arancia e Mandarino",tags:["ice"]},
-    {brand:"Fruizee",flavor:"Frutti Rossi, Uva e Ribes",tags:["ice"]},
-    {brand:"Fruizee Fire",flavor:"Fragole e Lampone",tags:["ice"]},
-    {brand:"Fruizee Purple",flavor:"Uva e Pesca",tags:["ice"]},
-    {brand:"Fruizee Sunset",flavor:"Limone e Frutti di Bosco",tags:["ice"]},
-    {brand:"Fruizee Bloody Lime",flavor:"Frutti Rossi, Uva, Ribes e Lime",tags:["ice"]},
-    {brand:"Fruizee Sun Bay",flavor:"Anguria, Limone e Fragola",tags:["ice"]},
-    {brand:"Fruizee Red Pearl",flavor:"Fragola e Arancia",tags:["ice"]},
-    {brand:"Fruizee Summer Beach",flavor:"Dragon Fruit, Guava e Limone",tags:["ice"]},
-    {brand:"Fruizee Spring Fresh",flavor:"Frutti Rossi, Uva Bianca e Yuzu",tags:["ice"]},
-    {brand:"Fruizee Magic Beach",flavor:"Mango e Passion Fruit",tags:["ice"]},
-    {brand:"Fruizee Dragon",flavor:"Dragon Fruit, Frutti Rossi e Uva",tags:["ice"]},
-    {brand:"Fruizee Sea Star",flavor:"Albicocca, Limone e Fragole",tags:["ice"]},
-    {brand:"Fruizee Limited",flavor:"Coca Cola e Ciliegia",tags:["ice"]},
-    {brand:"Fruizee Limited",flavor:"Coca Cola e Passion Fruit",tags:["ice"]},
-    {brand:"Fruizee Limited",flavor:"Coca Cola e Lime",tags:["ice"]},
-    {brand:"Fruizee Bloody Mango",flavor:"Frutti Rossi, Uva e Mango",tags:["ice"]},
-    {brand:"Fruizee Wind Star",flavor:"Ananas e Passion Fruit",tags:["ice"]},
-    {brand:"Fruizee Long Bay",flavor:"Mirtillo e Lampone",tags:["ice"]},
-    {brand:"Fruizee Dragon Killer",flavor:"Dragon Fruit e Fragola",tags:["ice"]},
-    {brand:"Fruizee Tropikania",flavor:"Fragola, Mandarino e Banana",tags:["ice"]},
-    {brand:"Fruizee",flavor:"Menta",tags:["ice"]},
-    {brand:"Fruizee Dragon Killer",flavor:"Dragon Fruit e Fragola",tags:["ice","30ml"]},
-    {brand:"Fruizee Wild Star",flavor:"Ananas e Passion Fruit",tags:["ice","30ml"]},
-    {brand:"Fruizee Long Bay",flavor:"Mirtillo e Lampone",tags:["ice","30ml"]},
-    {brand:"Fruizee Sunset Lover",flavor:"Limone, Frutti di Bosco e Lamponi",tags:["ice","30ml"]},
-    {brand:"Fruizee",flavor:"5 Tipi di Mango",tags:["ice","30ml"]},
-    {brand:"Fruizee Sun Bay",flavor:"Anguria e Limone",tags:["ice","30ml"]},
-    {brand:"Fruizee Fire Moon",flavor:"Lamponi e Fragole",tags:["ice","30ml"]},
-    {brand:"Fruizee Citron",flavor:"Limone, Arancia e Mandarino",tags:["ice","30ml"]},
-    {brand:"Fruizee Bloody Mango",flavor:"Frutti Rossi, Uva, Fragola e Mango",tags:["ice","30ml"]},
-    {brand:"Fruizee Bloody Summer",flavor:"Frutti Rossi, Uva e Fragole",tags:["ice","30ml"]},
-    {brand:"Fruizee Bloody Lime",flavor:"Frutti Rossi, Uva, Fragole e Lime",tags:["ice","30ml"]},
-    {brand:"Fruizee Bloody Dragon",flavor:"Frutti Rossi, Uva, Fragole e Dragon Fruit",tags:["ice","30ml"]},
-    {brand:"Fruizee Magic Beach",flavor:"Mango e Passion Fruit",tags:["ice","30ml"]},
-    {brand:"Fruizee Sea Star",flavor:"Albicocca e Limone",tags:["ice","30ml"]},
-    {brand:"Fruizee Purple Beach",flavor:"Uva e Pesca",tags:["ice","30ml"]},
-    {brand:"Fruizee Summer Beach",flavor:"Dragon Fruit, Guava e Limone",tags:["ice","30ml"]},
-    {brand:"Fruizee Spring Fresh",flavor:"Frutti Rossi, Uva e Limone",tags:["ice","30ml"]},
-  ],
-  biscotto: [
-    {brand:"Gabaon",flavor:"Biscotto al Cioccolato",tags:[]},
-    {brand:"Spontaneo",flavor:"Biscotto al Limone",tags:[]},
-    {brand:"Sensibile",flavor:"Biscotto alla Vaniglia",tags:[]},
-    {brand:"Emotivo",flavor:"Biscotto Vaniglia e Mandorla",tags:[]},
-    {brand:"Magnetico",flavor:"Biscotto al Bueno",tags:[]},
-    {brand:"Virtuoso",flavor:"Crostatina all'Albicocca",tags:[]},
-    {brand:"Cuore Bianco",flavor:"Biscotto Cocco e Cioccolato Bianco",tags:[]},
-    {brand:"Cuore Rosa",flavor:"Biscotto alla Fragola",tags:[]},
-    {brand:"Cuore Verde",flavor:"Biscotto al Pistacchio",tags:[]},
-    {brand:"Cuore Viola",flavor:"Biscotto al Mirtillo",tags:[]},
-    {brand:"Lotus",flavor:"Biscotto Lotus al Caramello",tags:[]},
-    {brand:"Gourmet",flavor:"Frollino ai Fichi",tags:[]},
-    {brand:"Cookie Bakeri",flavor:"Sbriciolata alla Vaniglia",tags:[]},
-    {brand:"Gran Cookie",flavor:"Biscotto al Burro",tags:[]},
-    {brand:"Gran Cookie",flavor:"Biscotto al Caramello",tags:[]},
-    {brand:"Gran Cookie",flavor:"Biscotto Burroso e Cioccolata",tags:[]},
-    {brand:"Biscottone",flavor:"Biscotto Burro e Vaniglia",tags:[]},
-    {brand:"Mangone",flavor:"Biscotto Vaniglia e Mango",tags:[]},
-    {brand:"Steam",flavor:"Biscotto Vaniglia e Zucchero",tags:[]},
-    {brand:"Steam",flavor:"Biscotto al Caffè",tags:[]},
-    {brand:"Shark",flavor:"Biscotto Caramello e Vaniglia",tags:[]},
-    {brand:"Vanilla's",flavor:"Biscotto Dorato alla Vaniglia",tags:[]},
-    {brand:"Monella",flavor:"Biscotto alla Nutella",tags:[]},
-    {brand:"Starlight",flavor:"Biscotto al Limone",tags:[]},
-    {brand:"Crack Pie",flavor:"Biscotto Caramello e Zucchero",tags:[]},
-    {brand:"Too Puft",flavor:"Biscotti Marshmallow e Cioccolato",tags:[]},
-    {brand:"Too Puft",flavor:"Biscotti Marshmallow e Pistacchio",tags:[]},
-    {brand:"Too Puft",flavor:"Biscotti Marshmallow e Cereali",tags:[]},
-    {brand:"D'Onut",flavor:"Ciambella al Limone",tags:[]},
-    {brand:"The Racing Donut",flavor:"Donut alla Frutta",tags:[]},
-    {brand:"The Racing Donut",flavor:"Donut alla Ciliegia",tags:[]},
-    {brand:"Micidiale",flavor:"Biscotto Cioccolato e Cocco",tags:[]},
-  ],
-  cereali: [
-    {brand:"Golan",flavor:"Snickers — Cioccolato, Arachidi, Caramello",tags:[]},
-    {brand:"Leale",flavor:"Kinder Cereali",tags:[]},
-    {brand:"Elegante",flavor:"Ovetto Kinder al Latte",tags:[]},
-    {brand:"Egocentrico",flavor:"Kinder Bueno — Wafer, Nocciola, Crema",tags:[]},
-    {brand:"Misterioso",flavor:"Kinder Bueno White",tags:[]},
-    {brand:"Invadente",flavor:"Pan di Spagna al Latte con Cocco",tags:[]},
-    {brand:"Kinder Paradiso",flavor:"Pan di Spagna, Latte e Limone",tags:[]},
-    {brand:"Cereal Spooki",flavor:"Riso Soffiato e Cacao",tags:[]},
-    {brand:"Tigers",flavor:"Snickers — Cioccolato e Arachidi",tags:[]},
-    {brand:"Cocco Wave",flavor:"Bounty — Cioccolato e Cocco",tags:[]},
-    {brand:"Crunch",flavor:"Galak — Riso Soffiato e Cioccolato Bianco",tags:[]},
-    {brand:"Cereal Creepios",flavor:"Latte, Cereali e Miele",tags:[]},
-    {brand:"Cereal Boo Berry",flavor:"Latte, Muesli e Mirtillo",tags:[]},
-    {brand:"Cereal Bunny",flavor:"Cereali, Latte e Marshmallow",tags:[]},
-    {brand:"Double Shock",flavor:"Riso Soffiato, Cioccolato Bianco e Nocciola",tags:[]},
-    {brand:"Top Twist",flavor:"Riso Soffiato e Cioccolato Bianco",tags:[]},
-    {brand:"Milk Shake",flavor:"Milk Shake al Cacao",tags:[]},
-  ],
-  torte: [
-    {brand:"Gourmet",flavor:"Cannolo alla Crema",tags:[]},
-    {brand:"Eden",flavor:"Cupcake al Burro",tags:[]},
-    {brand:"Silo",flavor:"Pasticciotto, Burro e Amarena",tags:[]},
-    {brand:"Sion",flavor:"Plumcake",tags:[]},
-    {brand:"Sodoma",flavor:"Croccobabà Cioccolato e Panna",tags:[]},
-    {brand:"Cocconut Cake",flavor:"Cheesecake Cocco e Cioccolato",tags:[]},
-    {brand:"Vanilla Cake",flavor:"Cheesecake alla Vaniglia",tags:[]},
-    {brand:"Mirtillone",flavor:"Cheesecake ai Mirtilli",tags:[]},
-    {brand:"Spaventoso",flavor:"Crema di Limone Vellutata",tags:[]},
-    {brand:"Pound It",flavor:"Tortino Glassato al Limone",tags:[]},
-    {brand:"Cryspi More",flavor:"Tortino alle More",tags:[]},
-    {brand:"Janerio",flavor:"Cupcake Cioccolato Bianco e Banana",tags:[]},
-    {brand:"Why Gold",flavor:"Babà al Rum",tags:[]},
-    {brand:"Short Bread",flavor:"Vaniglia Custard, Biscotto e Latte",tags:[]},
-    {brand:"Bad Flower",flavor:"Vaniglia Custard",tags:[]},
-    {brand:"Break",flavor:"Biscotto al Caffè",tags:[]},
-  ],
-  popcorn: [
-    {brand:"Americanone",flavor:"Pop Corn Burro e Caramello",tags:[]},
-    {brand:"Caramel and Pop",flavor:"Pop Corn, Caramello e Cioccolata",tags:[]},
-    {brand:"Croccantissimo",flavor:"Pop Corn",tags:[]},
-    {brand:"Croccantissimo Caramel",flavor:"Pop Corn e Caramello",tags:[]},
-  ],
-  crema: [
-    {brand:"Gourmet",flavor:"Crema Pasticcera",tags:[]},
-    {brand:"Abarim",flavor:"Nocciola e Panna",tags:[]},
-    {brand:"Gomorra",flavor:"Nocciola e Cocco",tags:[]},
-    {brand:"Moab",flavor:"Crema Diplomatica al Limone",tags:[]},
-    {brand:"Duetto Berries",flavor:"Vaniglia e Frutti di Bosco",tags:[]},
-    {brand:"Duetto Double",flavor:"Doppia Vaniglia",tags:[]},
-    {brand:"Vaniglia Fusion",flavor:"Crema di Vaniglia",tags:[]},
-    {brand:"Vaniglione",flavor:"Mix di Vaniglie",tags:[]},
-    {brand:"Fuck Stard",flavor:"Vaniglia Custard",tags:[]},
-    {brand:"Coofee Bomb",flavor:"Caffè, Panna e Crema Irish",tags:[]},
-    {brand:"G Spot",flavor:"Caramello",tags:[]},
-    {brand:"Steam",flavor:"Cocco e Bourbon",tags:[]},
-    {brand:"Vaniglia Gang Bang",flavor:"5 Tipi di Vaniglia",tags:[]},
-    {brand:"Cocko Play",flavor:"5 Tipi di Cocco e Cioccolato Bianco",tags:[]},
-    {brand:"Cherry Fusion",flavor:"Crema all'Amarena",tags:[]},
-    {brand:"Strawberry Fusion",flavor:"Crema alle Fragole",tags:[]},
-    {brand:"Pistacchio Fusion",flavor:"Crema di Pistacchio",tags:[]},
-    {brand:"Banana Fusion",flavor:"Crema di Banana",tags:[]},
-    {brand:"Fruttolone",flavor:"Mela, Pera, Banana e Panna",tags:[]},
-    {brand:"Froothie",flavor:"Frullato Pesca e Mango",tags:[]},
-  ],
-  gelati: [
-    {brand:"Passionale",flavor:"Gelato Exotic",tags:[]},
-    {brand:"Fantasy",flavor:"Gelato alla Fragola",tags:[]},
-    {brand:"Butter and Berry",flavor:"Wafle, Gelato Fragole e Mirtilli",tags:[]},
-    {brand:"Cryspi Banana",flavor:"Wafle, Gelato Banana e Vaniglia",tags:[]},
-    {brand:"Cryspi Fragola",flavor:"Wafle, Gelato Fragola e Vaniglia",tags:[]},
-    {brand:"Mentolone",flavor:"Menta e Panna Fresca",tags:[]},
-    {brand:"Shakerone",flavor:"Caffè Ghiacciato e Crema Irish",tags:[]},
-  ],
-  dubai: [
-    {brand:"Dubai Original",flavor:"Cioccolato al Latte, Pistacchio e Kataifi",tags:["20ml","30ml"]},
-    {brand:"Dubai White Edition",flavor:"Cioccolato Bianco, Pistacchio e Kataifi",tags:["20ml","30ml"]},
-    {brand:"Dubai Dark",flavor:"Cioccolato Fondente, Pistacchio e Kataifi",tags:["20ml","30ml"]},
-  ],
-  tabDolci: [
-    {brand:"Duetto Tabac",flavor:"Mix di Tabacchi Gold",tags:[]},
-    {brand:"King Silver",flavor:"Tabacco Dolce",tags:[]},
-    {brand:"Don Cristo Blonde",flavor:"Tabacco con Miele",tags:[]},
-    {brand:"Dolce Bacco",flavor:"Tabacco Gold e Vaniglia",tags:[]},
-    {brand:"Booms Classic",flavor:"Tabacco Classico Dolce",tags:[]},
-    {brand:"Spy",flavor:"Mix di Tabacchi Pregiati",tags:[]},
-    {brand:"T Rew Merit",flavor:"Tabacco con Nota di Virginia",tags:[]},
-    {brand:"Q Mabb Red",flavor:"Tabacco Dolce e Intenso",tags:[]},
-    {brand:"Wrat",flavor:"Tabacco Dolce",tags:[]},
-    {brand:"Don Cristo Black",flavor:"Tabacco Intenso",tags:[]},
-    {brand:"Magnifico",flavor:"Tabacco Virginia Dolce",tags:[]},
-    {brand:"Provocatorio",flavor:"Tabacco Leggero All Day",tags:[]},
-    {brand:"Booms",flavor:"Tabacco Cubano",tags:[]},
-    {brand:"Booms Reserva",flavor:"Tabacco Cubano Invecchiato e Miele",tags:[]},
-    {brand:"Booms Gran Reserve",flavor:"Tabacco Cubano, Vaniglia e Brandy",tags:[]},
-    {brand:"Booms Pistacchio",flavor:"Tabacco Cubano e Pistacchio",tags:[]},
-  ],
-  tabEquil: [
-    {brand:"Don Cristo Juliette",flavor:"Sigaro Light",tags:[]},
-    {brand:"Don Cristo Original",flavor:"Sigaro Molto Morbido",tags:[]},
-    {brand:"D77 Prime",flavor:"Tabacco Dolce e Secco",tags:[]},
-    {brand:"It's Answer",flavor:"Tabacco Morbido e Tostato",tags:[]},
-    {brand:"King Blue",flavor:"Tabacco Morbido e Tostato",tags:[]},
-    {brand:"Cam-El",flavor:"Tabacco Dolce e Secco",tags:[]},
-    {brand:"Q Mabb Light",flavor:"Tabacco Light",tags:[]},
-    {brand:"Colossale",flavor:"Tabacco con Leggera Tostatura",tags:[]},
-    {brand:"Determinato",flavor:"Tabacco con Cocco e Rum",tags:[]},
-    {brand:"Immenso",flavor:"Tabacco, Rum e Cioccolato Fondente",tags:[]},
-    {brand:"Imponente",flavor:"Tabacco, Biscotto e Crema Bavarese",tags:[]},
-    {brand:"Madornale",flavor:"Tabacco, Pop Corn e Caramello",tags:[]},
-    {brand:"Otello",flavor:"Tabacco Lievemente Secco",tags:[]},
-    {brand:"Deciso",flavor:"Miscela di Tabacchi",tags:[]},
-    {brand:"Morbido",flavor:"Tabacco e Biscotto",tags:[]},
-  ],
-  tabSecchi: [
-    {brand:"Don Cristo Cuba",flavor:"Sigaro Autentico",tags:[]},
-    {brand:"Don Cristo Romeo",flavor:"Tabacco Cubano Secco",tags:[]},
-    {brand:"It's Sienna",flavor:"Tabacco Intenso e Legnoso",tags:[]},
-    {brand:"King Red",flavor:"Tabacco da Sigaretta",tags:[]},
-    {brand:"Win-ston",flavor:"Tabacco Secco",tags:[]},
-    {brand:"Lucky Stryke",flavor:"Tabacco Secco da Sigaretta",tags:[]},
-    {brand:"Red Bacco",flavor:"Tabacco Secco",tags:[]},
-    {brand:"Potente",flavor:"Tabacco Affumicato",tags:[]},
-    {brand:"Booms Black Reserve",flavor:"Tabacco Invecchiato da Sigaro",tags:[]},
-    {brand:"Washington",flavor:"Tabacco Mediamente Secco",tags:[]},
-  ],
-  tabCremosi: [
-    {brand:"Raguel",flavor:"Tabacco e Caramello Salato",tags:[]},
-    {brand:"Remiel",flavor:"Tabacco e Biscotto",tags:[]},
-    {brand:"Virus",flavor:"Tabacco, Caramello e Crema",tags:[]},
-    {brand:"Baltic",flavor:"Tabacco, Burro e Caramello",tags:[]},
-    {brand:"Alpa",flavor:"Tabacco, Biscotto e Vaniglia",tags:[]},
-    {brand:"Steam Last Call",flavor:"Tabacco, Vaniglia e Miele",tags:[]},
-    {brand:"Le Picasso",flavor:"Tabacco, Caramello e Crema",tags:[]},
-    {brand:"Dolce Bacco",flavor:"Tabacco e Vaniglia",tags:[]},
-    {brand:"Crime",flavor:"Tabacco Secco e Crema",tags:[]},
-    {brand:"Khonsu",flavor:"Melone, Tabacco e Biscotto",tags:[]},
-    {brand:"Ra",flavor:"Pesca Bianca, Tabacco e Vaniglia",tags:[]},
-    {brand:"Decano",flavor:"Tabacco e Pera Caramellata",tags:[]},
-    {brand:"Don Cristo",flavor:"Banana, Cioccolato e Tabacco",tags:[]},
-    {brand:"Elfbar",flavor:"Tabacco Cremoso",tags:[]},
-    {brand:"It's Brown",flavor:"Tabacco e Nocciola",tags:[]},
-    {brand:"It's Blu",flavor:"Tabacco, Vaniglia e Menta",tags:[]},
-    {brand:"Zio Adriano",flavor:"Tabacco, Vaniglia e Caramello",tags:[]},
-    {brand:"VCT",flavor:"Tabacco, Crema e Vaniglia",tags:[]},
-    {brand:"VCT Caffè",flavor:"Tabacco, Vaniglia e Caffè",tags:[]},
-    {brand:"Supreme",flavor:"Tabacco, Cocco, Biscotto e Vaniglia",tags:[]},
-    {brand:"Relax",flavor:"Tabacco, Biscotto, Vaniglia e Caffè",tags:[]},
-    {brand:"Don Cristo Caramello",flavor:"Tabacco e Caramello",tags:[]},
-    {brand:"Don Cristo Custard",flavor:"Tabacco e Crema",tags:[]},
-    {brand:"Berlino",flavor:"Tabacco e Crema al Pistacchio",tags:[]},
-    {brand:"Ivory",flavor:"Tabacco, Cioccolato Bianco e Mandorla",tags:[]},
-    {brand:"First Pick Peach",flavor:"Tabacco, Pesca e Vaniglia",tags:[]},
-  ],
-  tabFruttati: [
-    {brand:"Gentlemen",flavor:"Tabacco e Ciliegia",tags:[]},
-    {brand:"Izz",flavor:"Tabacco e Mirtillo",tags:[]},
-    {brand:"Izz",flavor:"Tabacco e Arancia",tags:[]},
-    {brand:"Izz",flavor:"Tabacco e Lampone",tags:[]},
-    {brand:"Izz",flavor:"Tabacco e Liquirizia",tags:[]},
-    {brand:"It's Violet",flavor:"Tabacco, Frutti di Bosco e Menta",tags:[]},
-    {brand:"Don Cristo Apple",flavor:"Tabacco e Doppia Mela",tags:[]},
-    {brand:"Fear",flavor:"Tabacco, Fragola e Lime",tags:[]},
-    {brand:"First Pick Peach",flavor:"Tabacco e Pesca",tags:[]},
-    {brand:"Decano",flavor:"Tabacco e Pera Caramellata",tags:[]},
-  ],
-  tabMenta: [
-    {brand:"Melbourne",flavor:"Tabacco e Menta",tags:[]},
-    {brand:"It's Violet",flavor:"Tabacco, Frutti di Bosco e Menta",tags:[]},
-    {brand:"It's Blu",flavor:"Tabacco, Vaniglia e Menta",tags:[]},
-    {brand:"It's Verde",flavor:"Tabacco Extra Mentolato",tags:[]},
-    {brand:"Don Cristo Ice",flavor:"Tabacco Light Ice",tags:[]},
-    {brand:"Booms Ice",flavor:"Tabacco e Ice",tags:[]},
-    {brand:"Don Cristo Mint",flavor:"Tabacco e Menta",tags:[]},
-  ],
-  tabAlcolici: [
-    {brand:"Steam",flavor:"Tabacco con Whisky",tags:[]},
-    {brand:"Buena Vista",flavor:"Tabacco e Rum",tags:[]},
-  ],
-  tabEstrattiAFreddo: [
-    {brand:"Burley",flavor:"Tabacco Dolce Delicato",tags:[]},
-    {brand:"Red Rush",flavor:"Tabacco da Sigaretta",tags:[]},
-    {brand:"Empire",flavor:"Tabacco Leggero All Day",tags:[]},
-    {brand:"Mystery",flavor:"Tabacco Dolce",tags:[]},
-    {brand:"Epic",flavor:"Tabacco Secco Non Invasivo",tags:[]},
-    {brand:"Leggend",flavor:"Tabacco Secco",tags:[]},
-    {brand:"Kentucki",flavor:"Tabacco Lievemente Secco",tags:[]},
-    {brand:"Virginia",flavor:"Tabacco Dolce",tags:[]},
-    {brand:"Latakia",flavor:"Tabacco Secco Forte",tags:[]},
-  ],
-  tabSigari: [
-    {brand:"Sigaro",flavor:"all'Arancia",tags:[]},
-    {brand:"Sigaro",flavor:"Arabica Caffè",tags:[]},
-    {brand:"Sigaro",flavor:"alla Vaniglia",tags:[]},
-    {brand:"Sigaro",flavor:"Antico Classico",tags:[]},
-    {brand:"Sigaro",flavor:"Cioccolato Fondente",tags:[]},
-    {brand:"Sigaro",flavor:"alla Liquirizia",tags:[]},
-    {brand:"Sigaro",flavor:"Classico",tags:[]},
-  ],
-  tabMono: [
-    {brand:"Q Mabb Red",flavor:"Dolce e Intenso",tags:["nic","4-8-16mg"]},
-    {brand:"Win-ston Blu",flavor:"Tabacco Mediamente Secco",tags:["nic","4-8-16mg"]},
-    {brand:"Cam-El",flavor:"Tabacco Dolce e Secco",tags:["nic","4-8-16mg"]},
-    {brand:"Hollywood",flavor:"Tabacco Secco",tags:["nic","4-8-16mg"]},
-    {brand:"TNT Booms",flavor:"Tabacco Dolce Cubano",tags:["nic","4-8-16mg"]},
-    {brand:"First Pick Fruit",flavor:"Tabacco Fruttato",tags:["nic","4-8-12mg"]},
-    {brand:"Red Bacco",flavor:"Tabacco Secco",tags:["nic","3-6-9-15mg"]},
-    {brand:"Dolce Bacco",flavor:"Tabacco Gold e Vaniglia",tags:["nic","3-6-9-15mg"]},
-    {brand:"Otello",flavor:"Tabacco Lievemente Secco",tags:["nic","3-6-9-15mg"]},
-    {brand:"Deciso",flavor:"Miscela di Tabacchi",tags:["nic","3-6-9-15mg"]},
-    {brand:"Morbido",flavor:"Tabacco Morbido al Biscotto",tags:["nic","3-6-9-15mg"]},
-  ],
-  tabElfbar: [
-    {brand:"Elfbar",flavor:"Tabacco Cremoso",tags:[]},
-    {brand:"Don Cristo",flavor:"Sigaro",tags:[]},
-    {brand:"Don Cristo",flavor:"Sigaro e Pistacchio",tags:[]},
-    {brand:"Don Cristo",flavor:"Sigaro e Caffè",tags:[]},
-    {brand:"Don Cristo",flavor:"Sigaro Intenso",tags:[]},
-    {brand:"Don Cristo",flavor:"Sigaro e Crema Custard",tags:[]},
-    {brand:"Elfbar",flavor:"Ciliegia",tags:[]},
-    {brand:"Elfbar",flavor:"Gelato alla Fragola",tags:[]},
-    {brand:"Elfbar",flavor:"Fragola e Kiwi",tags:[]},
-    {brand:"Elfbar",flavor:"Pompelmo",tags:[]},
-    {brand:"Elfbar",flavor:"Uva",tags:[]},
-    {brand:"Elfbar",flavor:"Cherry Cola",tags:[]},
-    {brand:"Elfbar",flavor:"Mela e Pesca",tags:[]},
-    {brand:"Elfbar",flavor:"Mirtillo e Lampone",tags:[]},
-    {brand:"Elfbar",flavor:"Red Bull Ice",tags:[]},
-    {brand:"Elfbar",flavor:"Fragola Ice",tags:[]},
-    {brand:"Elfbar",flavor:"Mango",tags:[]},
-    {brand:"Elfbar",flavor:"Mirtillo",tags:[]},
-    {brand:"Elfbar",flavor:"Menta",tags:[]},
-    {brand:"Elfbar",flavor:"Pesca Ice",tags:[]},
-    {brand:"Elfbar",flavor:"Anguria",tags:[]},
-    {brand:"Elfbar",flavor:"Coca Cola",tags:[]},
-    {brand:"Elfbar",flavor:"Kiwi, Passion Fruit e Guava",tags:[]},
-    {brand:"Elfbar",flavor:"Pink Limonata",tags:[]},
-    {brand:"Elfbar",flavor:"Cotton Candy Ice",tags:[]},
-    {brand:"Elfbar",flavor:"Blue Razz — Limone e Mirtillo",tags:[]},
-  ],
+// ══════════════════════════════════════════════════
+// DATA — every item has: brand, flavor, format[], type, subtype, tags[]
+// format: '60ml' | '20-30ml' | '10ml'
+// type: 'fruit' | 'cream' | 'tab'
+// subtype: e.g. 'fresh','nofresh','ice','biscotto','cereali',etc.
+// ══════════════════════════════════════════════════
+
+const DB = [
+  // ═══════════════ 60ML FRUTTATI FRESH ═══════════════
+  ...[
+    ["Delicius","Mirtillo e Lampone",["fresh"]],
+    ["Delicius","Lampone, Mora e Mirtilli",["fresh"]],
+    ["Delicius","Bubble Gum al Mirtillo",[]],
+    ["Delicius","Mojito Dolce",["fresh"]],
+    ["Shinobi Killer","Frutti di Bosco e Melone",[]],
+    ["Shinobi","Papaya e Fico d'India",[]],
+    ["Shinobi Revenge","Pesca e Dragon Fruit",[]],
+    ["Shinobi Ice","Papaya e Fico d'India",["fresh"]],
+    ["Steam","Pesca e Anguria",[]],
+    ["Steam","Caramella alla Fragola",[]],
+    ["Steam","Doppia Mela da Narghilè",[]],
+    ["Steam","Arancia e Passion Fruit",["fresh"]],
+    ["Fantasi","Mela",["fresh"]],
+    ["Fantasi","Blueberry",["fresh"]],
+    ["Fantasi","Anguria e Ciliegia",["fresh"]],
+    ["Fantasi","Gummy Bear",["fresh"]],
+    ["Fantasi","Banana",["fresh"]],
+    ["Fantasi","Punch Tropicale e Agrumi",["fresh"]],
+    ["Fantasi","Uva Rossa",["fresh"]],
+    ["Fantasi","Melone",["fresh"]],
+    ["Fantasi","Red Bull",["fresh"]],
+    ["Fantasi","Spearmint Menta",["fresh"]],
+    ["Fantasi","Fragola, Lampone e Ciliegia",["fresh"]],
+    ["Fantasi","Gelato alla Fragola",["fresh"]],
+    ["Fantasi","Lime Mojito",["fresh"]],
+    ["Fantasi","Coca Cola",["fresh"]],
+    ["Fantasi","Mirtillo e Melone",["fresh"]],
+    ["Fantasi","Mango",["fresh"]],
+    ["Fantasi","Anguria",["fresh"]],
+    ["Fantasi","Lampone Blu e Ciliegia",["fresh"]],
+    ["Fantasi","Tropicale",["fresh"]],
+    ["Fantasi","Ribes Nero e Limone",["fresh"]],
+    ["Fantasi","Arancia, Mela, Pesca e Passion Fruit",["fresh"]],
+    ["Fantasi","Pesche",["fresh"]],
+    ["Fantasi","Uva",["fresh"]],
+    ["Fantasi","Fragole",["fresh"]],
+    ["Fantasi","Ciliegie",["fresh"]],
+    ["Fantasi","Arance",["fresh"]],
+    ["Fantasi","Lampone Rosso",["fresh"]],
+    ["Fantasi","Lampone Blu",["fresh"]],
+    ["Fantasi","More",["fresh"]],
+    ["Te Amo","Tè Freddo Limone e Pesca",[]],
+    ["Te Amo","Tè Freddo Mango",[]],
+    ["Te Amo","Tè Freddo Menta",[]],
+    ["Te Amo","Tè Freddo Mirtillo",[]],
+    ["Te Amo","Tè Freddo Cedro",[]],
+    ["Calypso NRG","Monster Fragola",["fresh"]],
+    ["Calypso NRG","Monster Ananas",["fresh"]],
+    ["Calypso NRG","Monster Doppia Mela",["fresh"]],
+    ["Calypso NRG","Monster Passion Fruit",["fresh"]],
+    ["Calypso NRG","Monster Anguria",["fresh"]],
+    ["Calypso NRG","Monster Limone e Lime",["fresh"]],
+    ["Calypso","Anguria e Kiwi",["fresh"]],
+    ["Calypso","Mela e Uva",["fresh"]],
+    ["Ice Club","Fragola e Banana",["fresh"]],
+    ["Ice Club","Passion Fruit e Pesca",["fresh"]],
+    ["Ice Club","Miele e Limone",["fresh"]],
+    ["Ice Club","Albicocca",["fresh"]],
+    ["Ice Club","Limone e Cocco",["fresh"]],
+    ["Amalfi","Gin e Limone",["fresh"]],
+    ["Frizzy Bear","Orsetti Gommosi Frizzanti",["fresh"]],
+    ["Menta Ice","Menta",["fresh"]],
+    ["Raspberry Punch","Lampone",["fresh"]],
+    ["Mintaia","Menta e Ananas",["fresh"]],
+    ["Mintaia","Menta e Lampone",["fresh"]],
+    ["Mintaia","Menta e Ribes",["fresh"]],
+    ["Mintaia","Menta e Fragola",["fresh"]],
+    ["Mintaia","Menta e Dragon Fruit",[]],
+    ["Lemon Time","Limonata e Pesca",["fresh"]],
+    ["Lemon Time","Limonata e Zenzero",["fresh"]],
+    ["Lemon Time","Limonata e Lampone Blu",["fresh"]],
+    ["Lemon Time","Fragola, Ananas e Limone",["fresh"]],
+    ["Lemon Time","Uva Verde e Limone",["fresh"]],
+    ["Lemon Time","Mango e Limone",["fresh"]],
+    ["Lemon Time","Anguria e Limone",["fresh"]],
+    ["Lemon Time","Dragon Fruit e Limone",["fresh"]],
+    ["Lemon Time","Arancia e Limone",["fresh"]],
+    ["Lemon Time","Limonata",["fresh"]],
+    ["Lemon Time","Frutti Rossi e Limone",["fresh"]],
+    ["Lemon Time","Mirtillo e Limone",["fresh"]],
+    ["Zhumo","Cocco e Melone",["fresh"]],
+    ["Zhumo","Ananas, Pesca e Mango",["fresh"]],
+    ["Zhumo","Fragola e Anguria",["fresh"]],
+    ["Zhumo","Mela, Fragola e Pesca",["fresh"]],
+    ["Zhumo Mamba","Dragon Fruit e Fragola",["fresh"]],
+    ["Zhumo","Ananas e Cocco",["fresh"]],
+    ["Zhumo","Arancia e Pesca",["fresh"]],
+    ["Travolgente","Ghiacciolo Fior di Fragola",["fresh"]],
+    ["Persuasivo","Tè Freddo Pesca",["fresh"]],
+    ["Nostalgico","Tè Freddo Limone",["fresh"]],
+    ["Passionale","Gelato Exotic",["fresh"]],
+    ["Competitivo","Fico d'India, Pera e Melone",["fresh"]],
+    ["Affabile","Anguria, Lampone e Melone",["fresh"]],
+    ["Pacha Mama","Melone Verde e Frutti di Bosco",["fresh"]],
+    ["Ice Tea","Tè Pesca",["fresh"]],
+    ["Ice Tea","Tè Limone",["fresh"]],
+    ["Berry Mango","Mirtillo, Lampone e Mango",["fresh"]],
+    ["Red Orange","Arancia, Passion Fruit e Fragola",["fresh"]],
+    ["Tropic Fruit","Dragon Fruit, Mirtillo e Ananas",["fresh"]],
+    ["Moon Lime","Mirtillo e Lime",["fresh"]],
+    ["Star Lime","Ribes e Lime",["fresh"]],
+    ["Spark Lime","Cocco, Fragola e Lime",["fresh"]],
+    ["Sun Lime","Mango, Pesca e Lime",["fresh"]],
+    ["Elfbar","Lampone, Fragola e Ciliegia",["fresh"]],
+    ["Elfbar","Menta",["fresh"]],
+    ["Elfbar","Cotton Candy",["fresh"]],
+    ["Supreme","Fragola e Kiwi",["fresh"]],
+    ["Red Bull","Red Bull",["fresh"]],
+    ["Reef","Mix di Frutta Acidula",["fresh"]],
+    ["Round Fruit","Pesca, Anguria e Kiwi",["fresh"]],
+    ["Red Astaire","Frutti Rossi e Mentolo",[]],
+    ["Vampire Vape","Mix di Frutta",["fresh"]],
+    ["Vampire Vape","Frutta e Arancia",["fresh"]],
+    ["Vampire Vape","Frutta e Uva",["fresh"]],
+    ["Vampire Vape","Frutta, Ciliegia e Dragon Fruit",["fresh"]],
+    ["Weps","Soda agli Agrumi",["fresh"]],
+    ["Menta Supreme","Menta Glaciale",[]],
+    ["Blue Mint","Mentolo, Liquirizia e Anice",[]],
+    ["Ment-Liqui","Menta e Liquirizia",[]],
+  ].map(([b,f,t])=>({brand:b,flavor:f,format:['60ml'],type:'fruit',subtype:'fresh',tags:t})),
+
+  // ═══════════════ 60ML FRUTTATI NO FRESH ═══════════════
+  ...[
+    ["Fantasi","Limone",[]],["Fantasi","Arancia e Mango",[]],
+    ["Fantasi Mad Blu","Frutti di Bosco",[]],["Fantasi","Bubble Gum al Mirtillo",[]],
+    ["Fantasi","Limone, Passion Fruit e Pesca",[]],
+    ["Fantasy Black Grap","Ribes Nero, Mela e Uva",[]],
+    ["Fantasy Grap-Straw","Uva e Fragola",[]],
+    ["Fantasy Pinea-Grape","Ananas e Pompelmo",[]],
+    ["Elfbar","Kiwi, Passion Fruit e Guava",[]],
+    ["Elfbar","Anguria",[]],["Elfbar Blackberry","Mora e Limone",[]],
+    ["Elfbar","Mirtillo e Frutti di Bosco",[]],
+    ["Elfbar","Limone e Frutti Rossi",[]],["Elfbar","Coca Cola",[]],
+    ["Don Cristo","Mela Rossa",[]],["Tropicone","Mix Esotico Tropicale",[]],
+    ["Fruttolone","Mela, Pera e Banana",[]],
+    ["Nairobi","Mango, Ananas e Champagne",[]],
+    ["Pineapple Bomb","Cocco e Ananas",[]],
+    ["Bloody Summer","Frutti Rossi, Ribes, Uva e Fragola",[]],
+    ["Citron","Limone, Arancia e Mandarino",[]],
+    ["Crazy Mango","5 Tipi di Mango",[]],["Nerissima","Liquirizia",[]],
+  ].map(([b,f,t])=>({brand:b,flavor:f,format:['60ml'],type:'fruit',subtype:'nofresh',tags:t})),
+
+  // ═══════════════ 60ML ICE / EXTRA ICE ═══════════════
+  ...[
+    ["Extra Ice","Piña Colada — Cocco e Ananas",[]],
+    ["Extra Ice","Kiwi, Passion Fruit e Guava",[]],
+    ["Extra Ice","Fragola",[]],["Extra Ice","Limone",[]],
+    ["Extra Ice","Melone",[]],["Extra Ice","Anguria",[]],
+    ["Extra Ice","Frutti di Bosco",[]],["Extra Ice","Mela",[]],
+    ["Extra Ice","Mirtillo e Lampone",[]],
+    ["Extra Ice","Fragola, Lampone e Ciliegia",[]],
+    ["Glacial Melon","Melone e Limone",[]],
+    ["Fruizee","5 Tipi di Mango",[]],
+    ["Fruizee Citron","Limone, Arancia e Mandarino",[]],
+    ["Fruizee","Frutti Rossi, Uva e Ribes",[]],
+    ["Fruizee Fire","Fragole e Lampone",[]],
+    ["Fruizee Purple","Uva e Pesca",[]],
+    ["Fruizee Sunset","Limone e Frutti di Bosco",[]],
+    ["Fruizee","Frutti Rossi, Uva, Ribes e Lime",[]],
+    ["Fruizee Sun Bay","Anguria, Limone e Fragola",[]],
+    ["Fruizee Red Pearl","Fragola e Arancia",[]],
+    ["Fruizee Summer Beach","Dragon Fruit, Guava e Limone",[]],
+    ["Fruizee Spring Fresh","Frutti Rossi, Uva Bianca e Yuzu",[]],
+    ["Fruizee Magic Beach","Mango e Passion Fruit",[]],
+    ["Fruizee Dragon","Dragon Fruit, Frutti Rossi e Uva",[]],
+    ["Fruizee Sea Star","Albicocca, Limone e Fragole",[]],
+    ["Fruizee Limited","Coca Cola e Ciliegia",[]],
+    ["Fruizee Limited","Coca Cola e Passion Fruit",[]],
+    ["Fruizee Limited","Coca Cola e Lime",[]],
+    ["Fruizee","Frutti Rossi, Uva e Mango",[]],
+    ["Fruizee Wind Star","Ananas e Passion Fruit",[]],
+    ["Fruizee Long Bay","Mirtillo e Lampone",[]],
+    ["Fruizee Dragon Killer","Dragon Fruit e Fragola",[]],
+    ["Fruizee Tropikania","Fragola, Mandarino e Banana",[]],
+    ["Fruizee","Menta",[]],
+  ].map(([b,f,t])=>({brand:b,flavor:f,format:['60ml'],type:'fruit',subtype:'ice',tags:['ice',...t]})),
+
+  // ═══════════════ 60ML CREMOSI — BISCOTTO ═══════════════
+  ...[
+    ["Gabaon","Biscotto al Cioccolato"],["Spontaneo","Biscotto al Limone"],
+    ["Sensibile","Biscotto alla Vaniglia"],["Emotivo","Biscotto Vaniglia e Mandorla"],
+    ["Magnetico","Biscotto al Bueno"],["Virtuoso","Crostatina all'Albicocca"],
+    ["Cuore Bianco","Biscotto Cocco e Cioccolato Bianco"],
+    ["Cuore Rosa","Biscotto alla Fragola"],["Cuore Verde","Biscotto al Pistacchio"],
+    ["Cuore Viola","Biscotto al Mirtillo"],["Lotus","Biscotto Lotus al Caramello"],
+    ["Gourmet","Frollino ai Fichi"],["Cookie Bakeri","Sbriciolata alla Vaniglia"],
+    ["Gran Cookie","Biscotto al Burro"],["Gran Cookie","Biscotto al Caramello"],
+    ["Gran Cookie","Biscotto Burroso e Cioccolata"],
+    ["Biscottone","Biscotto Burro e Vaniglia"],["Mangone","Biscotto Vaniglia e Mango"],
+    ["Steam","Biscotto Vaniglia e Zucchero"],["Steam","Biscotto al Caffè"],
+    ["Shark","Biscotto Caramello e Vaniglia"],["Vanilla's","Biscotto Dorato alla Vaniglia"],
+    ["Monella","Biscotto alla Nutella"],["Starlight","Biscotto al Limone"],
+    ["Crack Pie","Biscotto Caramello e Zucchero"],
+    ["Too Puft","Biscotti Marshmallow e Cioccolato"],
+    ["Too Puft","Biscotti Marshmallow e Pistacchio"],
+    ["Too Puft","Biscotti Marshmallow e Cereali"],
+    ["D'Onut","Ciambella al Limone"],["The Racing Donut","Donut alla Frutta"],
+    ["The Racing Donut","Donut alla Ciliegia"],["Micidiale","Biscotto Cioccolato e Cocco"],
+  ].map(([b,f])=>({brand:b,flavor:f,format:['60ml'],type:'cream',subtype:'biscotto',tags:[]})),
+
+  // ═══════════════ 60ML CREMOSI — CEREALI/SNACK ═══════════════
+  ...[
+    ["Golan","Snickers — Cioccolato, Arachidi e Caramello"],
+    ["Leale","Kinder Cereali"],["Elegante","Ovetto Kinder al Latte"],
+    ["Egocentrico","Kinder Bueno — Wafer, Nocciola e Crema"],
+    ["Misterioso","Kinder Bueno White"],
+    ["Invadente","Pan di Spagna al Latte con Cocco"],
+    ["Kinder Paradiso","Pan di Spagna, Latte e Limone"],
+    ["Cereal Spooki","Riso Soffiato e Cacao"],
+    ["Tigers","Snickers — Cioccolato e Arachidi"],
+    ["Cocco Wave","Bounty — Cioccolato e Cocco"],
+    ["Crunch","Galak — Riso Soffiato e Cioccolato Bianco"],
+    ["Cereal Creepios","Latte, Cereali e Miele"],
+    ["Cereal Boo Berry","Latte, Muesli e Mirtillo"],
+    ["Cereal Bunny","Cereali, Latte e Marshmallow"],
+    ["Double Shock","Riso Soffiato, Cioccolato Bianco e Nocciola"],
+    ["Top Twist","Riso Soffiato e Cioccolato Bianco"],
+    ["Milk Shake","Milk Shake al Cacao"],
+  ].map(([b,f])=>({brand:b,flavor:f,format:['60ml'],type:'cream',subtype:'cereali',tags:[]})),
+
+  // ═══════════════ 60ML CREMOSI — TORTE/CHEESECAKE ═══════════════
+  ...[
+    ["Gourmet","Cannolo alla Crema"],["Eden","Cupcake al Burro"],
+    ["Silo","Pasticciotto, Burro e Amarena"],["Sion","Plumcake"],
+    ["Sodoma","Croccobabà Cioccolato e Panna"],
+    ["Cocconut Cake","Cheesecake Cocco e Cioccolato"],
+    ["Vanilla Cake","Cheesecake alla Vaniglia"],
+    ["Mirtillone","Cheesecake ai Mirtilli"],
+    ["Spaventoso","Crema di Limone Vellutata"],
+    ["Pound It","Tortino Glassato al Limone"],
+    ["Cryspi More","Tortino alle More"],
+    ["Janerio","Cupcake Cioccolato Bianco e Banana"],
+    ["Why Gold","Babà al Rum"],["Short Bread","Vaniglia Custard, Biscotto e Latte"],
+    ["Bad Flower","Vaniglia Custard"],["Break","Biscotto al Caffè"],
+  ].map(([b,f])=>({brand:b,flavor:f,format:['60ml'],type:'cream',subtype:'torte',tags:[]})),
+
+  // ═══════════════ 60ML CREMOSI — POP CORN ═══════════════
+  ...[
+    ["Americanone","Pop Corn Burro e Caramello"],
+    ["Caramel and Pop","Pop Corn, Caramello e Cioccolata"],
+    ["Croccantissimo","Pop Corn"],["Croccantissimo Caramel","Pop Corn e Caramello"],
+  ].map(([b,f])=>({brand:b,flavor:f,format:['60ml'],type:'cream',subtype:'popcorn',tags:[]})),
+
+  // ═══════════════ 60ML CREMOSI — CREMA/VANIGLIA ═══════════════
+  ...[
+    ["Gourmet","Crema Pasticcera"],["Abarim","Nocciola e Panna"],
+    ["Gomorra","Nocciola e Cocco"],["Moab","Crema Diplomatica al Limone"],
+    ["Duetto Berries","Vaniglia e Frutti di Bosco"],
+    ["Duetto Double","Doppia Vaniglia"],["Vaniglia Fusion","Crema di Vaniglia"],
+    ["Vaniglione","Mix di Vaniglie"],["Fuck Stard","Vaniglia Custard"],
+    ["Coofee Bomb","Caffè, Panna e Crema Irish"],["G Spot","Caramello"],
+    ["Steam","Cocco e Bourbon"],["Vaniglia Gang Bang","5 Tipi di Vaniglia"],
+    ["Cocko Play","5 Tipi di Cocco e Cioccolato Bianco"],
+    ["Cherry Fusion","Crema all'Amarena"],
+    ["Strawberry Fusion","Crema alle Fragole"],
+    ["Pistacchio Fusion","Crema di Pistacchio"],
+    ["Banana Fusion","Crema di Banana"],
+    ["Fruttolone","Mela, Pera, Banana e Panna"],
+    ["Froothie","Frullato Pesca e Mango"],
+  ].map(([b,f])=>({brand:b,flavor:f,format:['60ml'],type:'cream',subtype:'crema',tags:[]})),
+
+  // ═══════════════ 60ML CREMOSI — GELATI ═══════════════
+  ...[
+    ["Passionale","Gelato Exotic"],["Fantasy","Gelato alla Fragola"],
+    ["Butter and Berry","Wafle, Gelato Fragole e Mirtilli"],
+    ["Cryspi Banana","Wafle, Gelato Banana e Vaniglia"],
+    ["Cryspi Fragola","Wafle, Gelato Fragola e Vaniglia"],
+    ["Mentolone","Menta e Panna Fresca"],
+    ["Shakerone","Caffè Ghiacciato e Crema Irish"],
+  ].map(([b,f])=>({brand:b,flavor:f,format:['60ml'],type:'cream',subtype:'gelati',tags:[]})),
+
+  // ═══════════════ 60ML CREMOSI — DUBAI ═══════════════
+  ...[
+    ["Dubai Original","Cioccolato al Latte, Pistacchio e Kataifi"],
+    ["Dubai White","Cioccolato Bianco, Pistacchio e Kataifi"],
+    ["Dubai Dark","Cioccolato Fondente, Pistacchio e Kataifi"],
+  ].map(([b,f])=>({brand:b,flavor:f,format:['60ml'],type:'cream',subtype:'dubai',tags:[]})),
+
+  // ═══════════════ 60ML TABACCHI — DOLCI ═══════════════
+  ...[
+    ["King Silver","Tabacco Dolce"],["Don Cristo Blonde","Tabacco con Miele"],
+    ["Dolce Bacco","Tabacco Gold e Vaniglia"],["Booms Classic","Tabacco Classico Dolce"],
+    ["Spy","Mix di Tabacchi Pregiati"],["T Rew Merit","Tabacco con Nota di Virginia"],
+    ["Q Mabb Red","Tabacco Dolce e Intenso"],["Wrat","Tabacco Dolce"],
+    ["Magnifico","Tabacco Virginia Dolce"],["Provocatorio","Tabacco Leggero All Day"],
+    ["Booms","Tabacco Cubano"],["Booms Reserva","Tabacco Cubano Invecchiato e Miele"],
+    ["Booms Gran Reserve","Tabacco Cubano, Vaniglia e Brandy"],
+    ["Booms Pistacchio","Tabacco Cubano e Pistacchio"],
+  ].map(([b,f])=>({brand:b,flavor:f,format:['60ml'],type:'tab',subtype:'tab-dolci',tags:[]})),
+
+  // ═══════════════ 60ML TABACCHI — EQUILIBRATI ═══════════════
+  ...[
+    ["Don Cristo Juliette","Sigaro Light"],["Don Cristo Original","Sigaro Molto Morbido"],
+    ["D77 Prime","Tabacco Dolce e Secco"],["It's Answer","Tabacco Morbido e Tostato"],
+    ["King Blue","Tabacco Morbido e Tostato"],["Cam-El","Tabacco Dolce e Secco"],
+    ["Q Mabb Light","Tabacco Light"],["Colossale","Tabacco con Leggera Tostatura"],
+    ["Determinato","Tabacco con Cocco e Rum"],["Immenso","Tabacco, Rum e Cioccolato"],
+    ["Imponente","Tabacco, Biscotto e Crema Bavarese"],
+    ["Madornale","Tabacco, Pop Corn e Caramello"],
+    ["Otello","Tabacco Lievemente Secco"],["Deciso","Miscela di Tabacchi"],
+    ["Morbido","Tabacco e Biscotto"],
+  ].map(([b,f])=>({brand:b,flavor:f,format:['60ml'],type:'tab',subtype:'tab-equil',tags:[]})),
+
+  // ═══════════════ 60ML TABACCHI — SECCHI ═══════════════
+  ...[
+    ["Don Cristo Cuba","Sigaro Autentico"],["Don Cristo Romeo","Tabacco Cubano Secco"],
+    ["It's Sienna","Tabacco Intenso e Legnoso"],["King Red","Tabacco da Sigaretta"],
+    ["Win-ston","Tabacco Secco"],["Lucky Stryke","Tabacco Secco da Sigaretta"],
+    ["Red Bacco","Tabacco Secco"],["Potente","Tabacco Affumicato"],
+    ["Booms Black Reserve","Tabacco Invecchiato da Sigaro"],
+    ["Washington","Tabacco Mediamente Secco"],
+  ].map(([b,f])=>({brand:b,flavor:f,format:['60ml'],type:'tab',subtype:'tab-secchi',tags:[]})),
+
+  // ═══════════════ 60ML TABACCHI — FRUTTATI/MENTOLATI ═══════════════
+  ...[
+    ["Gentlemen","Tabacco e Ciliegia"],["Izz","Tabacco e Mirtillo"],
+    ["Izz","Tabacco e Arancia"],["Izz","Tabacco e Lampone"],
+    ["Izz","Tabacco e Liquirizia"],["It's Violet","Tabacco, Frutti di Bosco e Menta"],
+    ["Don Cristo Apple","Tabacco e Doppia Mela"],["Fear","Tabacco, Fragola e Lime"],
+    ["First Pick Peach","Tabacco e Pesca"],["Decano","Tabacco e Pera Caramellata"],
+    ["Melbourne","Tabacco e Menta"],["It's Blu","Tabacco, Vaniglia e Menta"],
+    ["It's Verde","Tabacco Extra Mentolato"],["Don Cristo Ice","Tabacco Light Ice"],
+    ["Booms Ice","Tabacco e Ice"],["Don Cristo Mint","Tabacco e Menta"],
+  ].map(([b,f])=>({brand:b,flavor:f,format:['60ml'],type:'tab',subtype:'tab-fruit-ment',tags:[]})),
+
+  // ═══════════════ 60ML TABACCHI CREMOSI (HYBRID) ═══════════════
+  ...[
+    ["Raguel","Tabacco e Caramello Salato"],["Remiel","Tabacco e Biscotto"],
+    ["Virus","Tabacco, Caramello e Crema"],["Baltic","Tabacco, Burro e Caramello"],
+    ["Alpa","Tabacco, Biscotto e Vaniglia"],["Steam Last Call","Tabacco, Vaniglia e Miele"],
+    ["Le Picasso","Tabacco, Caramello e Crema"],["Dolce Bacco","Tabacco e Vaniglia"],
+    ["Crime","Tabacco Secco e Crema"],["Khonsu","Melone, Tabacco e Biscotto"],
+    ["Ra","Pesca Bianca, Tabacco e Vaniglia"],["Decano","Tabacco e Pera Caramellata"],
+    ["Don Cristo","Banana, Cioccolato e Tabacco"],["Elfbar","Tabacco Cremoso"],
+    ["It's Brown","Tabacco e Nocciola"],["Zio Adriano","Tabacco, Vaniglia e Caramello"],
+    ["VCT","Tabacco, Crema e Vaniglia"],["VCT Caffè","Tabacco, Vaniglia e Caffè"],
+    ["Supreme","Tabacco, Cocco, Biscotto e Vaniglia"],
+    ["Relax","Tabacco, Biscotto, Vaniglia e Caffè"],
+    ["Don Cristo Caramello","Tabacco e Caramello"],
+    ["Don Cristo Custard","Tabacco e Crema"],["Berlino","Tabacco e Crema al Pistacchio"],
+    ["Ivory","Tabacco, Cioccolato Bianco e Mandorla"],
+    ["First Pick Peach","Tabacco, Pesca e Vaniglia"],
+    ["Steam Nariz Diablo","Tabacco con Whisky"],["Buena Vista","Tabacco e Rum"],
+    ["Burley","Tabacco Dolce Delicato"],["Red Rush","Tabacco da Sigaretta"],
+    ["Empire","Tabacco Leggero All Day"],["Mystery","Tabacco Dolce"],
+    ["Epic","Tabacco Secco Non Invasivo"],["Leggend","Tabacco Secco"],
+    ["Kentucki","Tabacco Lievemente Secco"],["Virginia","Tabacco Dolce"],
+    ["Latakia","Tabacco Secco Forte"],
+  ].map(([b,f])=>({brand:b,flavor:f,format:['60ml'],type:'hybrid',subtype:'tab-cremosi',tags:[]})),
+
+  // ═══════════════ 60ML TABACCHI — SIGARI SPECIALI ═══════════════
+  ...[
+    ["Sigaro","all'Arancia"],["Sigaro","Arabica Caffè"],["Sigaro","alla Vaniglia"],
+    ["Sigaro","Antico Classico"],["Sigaro","Cioccolato Fondente"],
+    ["Sigaro","alla Liquirizia"],["Sigaro","Classico"],
+  ].map(([b,f])=>({brand:b,flavor:f,format:['60ml'],type:'tab',subtype:'tab-sigari',tags:['sigaro']})),
+
+  // ═══════════════ 20-30ML FRUTTATI ═══════════════
+  ...[
+    ["Fantasi","Mela Verde",["20ml","30ml"]],["Fantasi","Mirtillo",["20ml","30ml"]],
+    ["Fantasi","Anguria e Ciliegia",["20ml","30ml"]],
+    ["Zhumo Mamba","Dragon Fruit e Fragola",["30ml"]],
+    ["Zhumo","Mela, Fragola e Pesca",["30ml"]],["Zhumo","Arancia e Pesca",["30ml"]],
+    ["Zhumo","Cocco e Ananas",["30ml"]],["Zhumo","Fragola e Anguria",["30ml"]],
+    ["Zhumo","Uva e Ciliegia",["30ml"]],["Zhumo","Cocco e Melone",["30ml"]],
+    ["Te Amo","Tè Freddo Limone e Pesca",["30ml"]],["Te Amo","Tè Freddo Mango",["30ml"]],
+    ["Te Amo","Tè Freddo Menta",["30ml"]],["Te Amo","Tè Freddo Mirtillo",["30ml"]],
+    ["Te Amo","Tè Freddo Cedro",["30ml"]],
+    ["Calypso NRG","Monster Fragola",["20ml"]],["Calypso NRG","Monster Ananas",["20ml"]],
+    ["Calypso NRG","Monster Doppia Mela",["20ml"]],
+    ["Calypso NRG","Monster Passion Fruit",["20ml"]],
+    ["Calypso NRG","Monster Anguria",["20ml"]],
+    ["Calypso NRG","Monster Limone e Lime",["20ml"]],
+    ["Calypso","Anguria e Kiwi",["20ml"]],
+    ["Calypso","Frutti di Bosco e Agrumi",["20ml"]],
+    ["Fantasi","Caramelle alla Frutta",["20ml","30ml"]],
+    ["Fantasi","Gelato alla Fragola",["20ml","30ml"]],
+    ["Fantasi","Spearmint Menta",["20ml","30ml"]],
+    ["Fantasi","Uva Rossa",["20ml","30ml"]],
+    ["Fantasi","Red Bull",["20ml","30ml"]],
+    ["Fantasi","Melone",["20ml","30ml"]],
+    ["Fantasi","Punch Tropicale e Agrumi",["20ml","30ml"]],
+    ["Fantasi","Fragola, Lampone e Ciliegia",["20ml","30ml"]],
+    ["Fantasi","Banana",["20ml","30ml"]],
+    ["Fantasi","Mirtillo e Melone",["20ml","30ml"]],
+    ["Fantasy","Mango",["20ml","30ml"]],["Fantasy","Anguria",["20ml","30ml"]],
+    ["Fantasy","Coca Cola",["20ml","30ml"]],["Fantasy","Limonata",["20ml","30ml"]],
+    ["Fantasy","Lampone Blu e Ciliegia",["20ml","30ml"]],
+    ["Fantasy","Tropicale",["20ml","30ml"]],
+    ["Fantasy","Ribes Nero e Limone",["20ml","30ml"]],
+    ["Fantasy","Arancia, Mela, Pesca e Passion Fruit",["20ml","30ml"]],
+    ["Fantasy","Pesche",["20ml","30ml"]],["Fantasy","Uva",["20ml","30ml"]],
+    ["Fantasy","Fragole",["20ml","30ml"]],["Fantasy","Ciliegia",["20ml","30ml"]],
+    ["Fantasy","Mojito",["20ml","30ml"]],["Fantasy","Arance",["20ml","30ml"]],
+    ["Fantasy","Lampone Rosso",["20ml","30ml"]],
+    ["Fantasy","Lamponi Blu",["20ml","30ml"]],["Fantasy","More",["20ml","30ml"]],
+    ["Moon Lime","Mirtillo e Lime",["20ml","30ml"]],
+    ["Star Lime","Ribes e Lime",["20ml","30ml"]],
+    ["Spark Lime","Cocco, Fragola e Lime",["20ml","30ml"]],
+    ["Sun Lime","Mango, Pesca e Lime",["20ml","30ml"]],
+    ["Ment-Liqui","Menta e Liquirizia",["20ml","30ml"]],
+    ["01 Vape","Mela Verde",["20ml","30ml"]],
+    ["01 Vape","Dragon Fruit e Passion Fruit",["20ml","30ml"]],
+    ["01 Vape","Mango e Pesca",["20ml","30ml"]],
+    ["01 Vape","Limone e Lime",["20ml","30ml"]],
+    ["01 Vape","Menta e Frutti di Bosco",["20ml","30ml"]],
+    ["01 Vape","Menta Artica",["20ml","30ml"]],
+    ["01 Vape","Anguria, Fragola, Menta e Lime",["20ml","30ml"]],
+    ["Hungry Mango","Mango",["20ml","30ml"]],
+    ["Ficurinia","Fico d'India, Papaya e Lime",["20ml","30ml"]],
+    ["Liquiri'","Liquirizia e Limone",["20ml","30ml"]],
+    ["Red Bull","Red Bull",["20ml"]],["Berry Mango","Frutti di Bosco e Mango",["20ml"]],
+    ["Dragon Peach","Pesca e Dragon Fruit",["20ml"]],
+    ["Red Orange","Arancia, Passion Fruit e Fragola",["20ml"]],
+    ["Papaya Dragon","Papaya, Dragon Fruit e Lime",["20ml"]],
+    ["Kiwi-Passion Mang","Kiwi, Passion Fruit e Mango",["20ml"]],
+    ["Red Melon","Melone, Anguria e Fragola",["20ml"]],
+    ["Pink Lemonade","Fragola, Limone e Lampone",["20ml"]],
+    ["Blueberry","Mirtillo",["20ml"]],
+    // NO FRESH 20-30ml
+    ["Fantasi","Limone",["20ml","30ml"]],["Fantasi","Arancia e Mango",["20ml","30ml"]],
+    ["Fantasi","Bubble Gum al Mirtillo",["20ml","30ml"]],
+    ["Fantasi Mad Blu","Frutti di Bosco",["20ml","30ml"]],
+    ["Fantasi","Limone, Pesca e Passion Fruit",["20ml","30ml"]],
+    ["Fantasy","Limonata e Mirtilli",["20ml","30ml"]],
+    ["Fantasy Black Grap","Ribes Nero, Mela e Uva",["20ml","30ml"]],
+    ["Fantasy Grap-Straw","Uva e Fragola",["20ml","30ml"]],
+    ["Fantasy Pinea-Grape","Ananas e Pompelmo",["20ml","30ml"]],
+    ["Ficurinia","Papaya, Lime e Fico d'India",["20ml","30ml"]],
+    ["Kanzi","Melone, Fragola e Kiwi",["20ml","30ml"]],
+    ["Tropicone","Tropicale",["20ml"]],["Pineapple Bomb","Ananas e Cocco",["20ml"]],
+    ["Fruttolone","Mela, Pera e Banana",["20ml"]],
+  ].map(([b,f,sz])=>({brand:b,flavor:f,format:['20-30ml'],type:'fruit',subtype:'fruit-2030',tags:sz||[]})),
+
+  // ═══════════════ 20-30ML ICE (Fruizee) ═══════════════
+  ...[
+    ["Fruizee Dragon Killer","Dragon Fruit e Fragola"],
+    ["Fruizee Wild Star","Ananas e Passion Fruit"],
+    ["Fruizee Long Bay","Mirtillo e Lampone"],
+    ["Fruizee Sunset Lover","Limone, Frutti di Bosco e Lamponi"],
+    ["Fruizee","5 Tipi di Mango"],["Fruizee Sun Bay","Anguria e Limone"],
+    ["Fruizee Fire Moon","Lamponi e Fragole"],
+    ["Fruizee Citron","Limone, Arancia e Mandarino"],
+    ["Fruizee","Frutti Rossi, Uva, Fragola e Mango"],
+    ["Fruizee Bloody Summer","Frutti Rossi, Uva e Fragole"],
+    ["Fruizee Bloody Lime","Frutti Rossi, Uva, Fragole e Lime"],
+    ["Fruizee Bloody Dragon","Frutti Rossi, Uva, Fragole e Dragon Fruit"],
+    ["Fruizee Magic Beach","Mango e Passion Fruit"],
+    ["Fruizee Sea Star","Albicocca e Limone"],
+    ["Fruizee Purple Beach","Uva e Pesca"],
+    ["Fruizee Summer Beach","Dragon Fruit, Guava e Limone"],
+    ["Fruizee Spring Fresh","Frutti Rossi, Uva e Limone"],
+  ].map(([b,f])=>({brand:b,flavor:f,format:['20-30ml'],type:'fruit',subtype:'ice-2030',tags:['ice','30ml']})),
+
+  // ═══════════════ 20-30ML CREMOSI ═══════════════
+  ...[
+    ["Dubai Original","Cioccolato al Latte, Pistacchio e Kataifi",["20ml","30ml"]],
+    ["Dubai White","Cioccolato Bianco, Pistacchio e Kataifi",["20ml","30ml"]],
+    ["Dubai Dark","Cioccolato Fondente, Pistacchio e Kataifi",["20ml","30ml"]],
+    ["Egocentrico","Crema Nocciola e Cioccolato",["20ml","30ml"]],
+    ["Elegante","Ovetto Kinder",["20ml","30ml"]],
+    ["Emotivo","Biscotto Vaniglia e Mandorla",["20ml","30ml"]],
+    ["Invadente","Pan di Spagna Latte e Cocco",["20ml","30ml"]],
+    ["Leale","Kinder Cereali",["20ml","30ml"]],
+    ["Magnetico","Biscotto con Crema di Bueno",["20ml","30ml"]],
+    ["Misterioso","Crema White, Nocciola e Cioccolato",["20ml","30ml"]],
+    ["Sensibile","Biscotto con Crema di Vaniglia",["20ml","30ml"]],
+    ["Spontaneo","Biscotto con Crema di Limoni",["20ml","30ml"]],
+    ["Virtuoso","Crostatina all'Albicocca",["20ml","30ml"]],
+    ["Cuore Bianco","Biscotto Cocco e Cioccolato Bianco",["20ml","30ml"]],
+    ["Cuore Rosa","Biscotto alla Fragola",["20ml","30ml"]],
+    ["Cuore Verde","Biscotto al Pistacchio",["20ml","30ml"]],
+    ["Cuore Viola","Biscotto al Mirtillo",["20ml","30ml"]],
+    ["Choccolate Snack","Kinder Fetta al Latte",["20ml","30ml"]],
+    ["Orange Snack","Brioche all'Albicocca",["20ml","30ml"]],
+    ["Red Snack","Brioche alla Ciliegia",["20ml","30ml"]],
+    ["White Snack","Kinder Brioche al Latte",["20ml","30ml"]],
+    ["Yellow Snack","Kinder Paradiso Brioche Latte e Limone",["20ml","30ml"]],
+    ["Berries","Vaniglia e Frutti di Bosco",["30ml"]],
+    ["Duetto","Doppia Vaniglia",["30ml"]],
+    ["Gourmet","Frollino con Marmellata di Fichi",["30ml"]],
+    ["Gourmet","Cannolo alla Crema",["30ml"]],
+    ["Gourmet","Crema Pasticcera",["30ml"]],
+    ["Gomorra","Crema di Nocciola e Cocco",["30ml"]],
+    ["Golan","Snickers — Cioccolato, Arachidi e Caramello",["30ml"]],
+    ["Gabaon","Biscotto con Gocce di Cioccolata",["30ml"]],
+    ["Abarim","Crema di Nocciola",["30ml"]],["Eden","Cupcake al Burro",["30ml"]],
+    ["Moab","Crema al Limone",["30ml"]],["Silo","Pasticciotto Burro e Amarena",["30ml"]],
+    ["Sion","Plumcake",["30ml"]],
+    ["Sodoma","Croccobabà Cioccolato e Panna",["30ml"]],
+    ["Cookie Bakeri","Sbriciolata alla Vaniglia",["20ml","30ml"]],
+    ["Cocconut Cake","Cheesecake Cocco e Cioccolato",["20ml","30ml"]],
+    ["Vanilla Cake","Cheesecake alla Vaniglia",["20ml","30ml"]],
+    ["Shark","Biscotto Caramello e Vaniglia",["20ml","30ml"]],
+    ["Vanilla's","Biscotto Dorato alla Vaniglia",["20ml","30ml"]],
+    ["Monella","Biscotto alla Nutella",["20ml","30ml"]],
+    ["Starlight","Biscotto con Crema di Limoni",["20ml","30ml"]],
+    ["Crack Pie","Biscotto Caramello e Zucchero",["20ml","30ml"]],
+    ["Too Puft","Biscotti Marshmallow e Cioccolato",["20ml","30ml"]],
+    ["Pound It","Tortino Glassato al Limone",["20ml","30ml"]],
+    ["D'Onut","Ciambella al Limone",["20ml","30ml"]],
+    ["Cereal Spooki","Riso Soffiato e Cacao",["20ml","30ml"]],
+    ["Tigers","Snickers",["20ml","30ml"]],["Top Twist","Riso Soffiato e Cioccolato Bianco",["20ml","30ml"]],
+    ["Cocco Wave","Bounty — Cioccolato e Cocco",["20ml","30ml"]],
+    ["Cereal Creepios","Latte, Cereali e Miele",["20ml","30ml"]],
+    ["Cereal Boo Berry","Latte, Muesli e Mirtillo",["20ml","30ml"]],
+    ["Cereal Bunny","Cereali, Latte e Marshmallow",["20ml","30ml"]],
+    ["Milk Shake","Milk Shake al Cacao",["20ml","30ml"]],
+    ["Cryspi Fragola","Wafle, Gelato Fragola e Vaniglia",["20ml","30ml"]],
+    ["Cryspi More","Tortino alle More",["20ml","30ml"]],
+    ["The Racing Donut's","Donut alla Frutta",["20ml","30ml"]],
+    ["Cryspi Banana","Wafle, Gelato Banana e Vaniglia",["20ml","30ml"]],
+    ["The Racing Donut","Donut alla Ciliegia",["20ml","30ml"]],
+    ["Toopuft Pistacchio","Biscotti Marshmallow e Pistacchio",["20ml","30ml"]],
+    ["Too Puft Cereal","Biscotti Marshmallow e Cereali",["20ml","30ml"]],
+    ["01 Vape","Melone e Crema Pasticcera",["20ml","30ml"]],
+    ["01 Vape","Pop Corn e Caramello",["20ml","30ml"]],
+    ["Lotus","Biscotto Lotus e Caramello",["20ml"]],
+    ["Butter Berry","Gelato Wafle Fragole e Mirtilli",["20ml"]],
+    ["Americanone","Pop Corn Burro e Caramello",["20ml"]],
+    ["Fruttolone","Mela, Pera, Banana e Panna",["20ml"]],
+    ["Mangone","Biscotto al Mango",["20ml"]],
+    ["Short Bread","Vaniglia Custard, Biscotto e Latte",["30ml"]],
+    ["Bad Flower","Vaniglia Custard",["30ml"]],
+    ["Break","Biscotto al Caffè",["30ml"]],
+  ].map(([b,f,sz])=>({brand:b,flavor:f,format:['20-30ml'],type:'cream',subtype:'cream-2030',tags:sz||[]})),
+
+  // ═══════════════ 20-30ML TABACCHI ═══════════════
+  ...[
+    ["Q Mabb Red","Dolce e Intenso",["20ml","30ml"]],
+    ["Q Mabb Light","Tabacco Light",["20ml","30ml"]],
+    ["Cam-El","Tabacco Dolce e Secco",["20ml","30ml"]],
+    ["Red Lucky Stryke","Tabacco Secco da Sigaretta",["20ml","30ml"]],
+    ["Washington","Tabacco Mediamente Secco",["20ml","30ml"]],
+    ["T Rew Merit","Tabacco Dolce con Virginia",["20ml","30ml"]],
+    ["Remiel","Tabacco e Biscotto",["30ml"]],
+    ["Raguel","Tabacco e Caramello Salato",["30ml"]],
+    ["Colossale","Tabacco Dolce con Leggera Tostatura",["20ml","30ml"]],
+    ["Determinato","Tabacco con Cocco e Rum",["20ml","30ml"]],
+    ["Immenso","Tabacco, Rum e Cioccolato Fondente",["20ml","30ml"]],
+    ["Imponente","Tabacco, Biscotto e Crema Bavarese",["20ml","30ml"]],
+    ["Madornale","Tabacco, Pop Corn e Caramello",["20ml","30ml"]],
+    ["Magnifico","Tabacco Virginia Dolce",["20ml","30ml"]],
+    ["Mastodontistico","Sapore Speziato Virginia Burley Kentucky",["20ml","30ml"]],
+    ["Potente","Tabacco con Forte Tostatura Affumicata",["20ml","30ml"]],
+    ["Provocatorio","Tabacco Leggero All Day",["20ml","30ml"]],
+    ["Burley Gold Wave","Estratto di Tabacco Leggero",["20ml","30ml"]],
+    ["Kentucky Gold Wave","Estratto di Tabacco Secco",["20ml","30ml"]],
+    ["Duetto Tabacco","Mix di Tabacco con Vaniglia",["30ml"]],
+    ["Picasso","Tabacco, Caramello e Crema",["30ml"]],
+    ["Zio Adriano","Tabacco, Vaniglia e Caramello",["20ml","30ml"]],
+    ["Dolce Bacco","Tabacco Gold con Vaniglia",["20ml","30ml"]],
+    ["Otello","Tabacco Lievemente Secco",["20ml","30ml"]],
+    ["Deciso","Miscela di Tabacchi",["20ml","30ml"]],
+    ["Morbido","Tabacco e Biscotto",["20ml","30ml"]],
+    ["Booms","Tabacco Cubano",["20ml","30ml"]],
+    ["Booms Reserva","Tabacco Cubano Invecchiato e Miele",["20ml","30ml"]],
+    ["Booms Gran Reserve","Tabacco Cubano, Vaniglia e Brandy",["20ml","30ml"]],
+    ["Booms Pistacchio","Tabacco Cubano e Pistacchio",["20ml","30ml"]],
+    ["Booms Ice","Tabacco Cubano e Ice",["20ml","30ml"]],
+    ["Red Bacco","Tabacco Secco da Sigaretta",["20ml","30ml"]],
+    ["Tabacco Burley","Tabacco, Vaniglia e Bourbon",["30ml"]],
+    ["Melbourne","Tabacco e Menta",["30ml"]],
+    ["Izz Mirtillo","Tabacco e Mirtillo",["20ml"]],
+    ["Izz Arancia","Tabacco e Arancia",["20ml"]],
+    ["Izz Lampone","Tabacco e Lampone",["20ml"]],
+    ["Izz Liquirizia","Tabacco e Liquirizia",["20ml"]],
+    ["It's Viola","Tabacco, Menta e Frutti di Bosco",["30ml"]],
+    ["It's Blu","Tabacco, Vaniglia e Menta",["30ml"]],
+    ["It's Verde","Tabacco Extra Mentolato",["30ml"]],
+    ["It's Brown","Tabacco e Nocciola",["30ml"]],
+    ["Ivory","Tabacco, Cioccolato Bianco e Mandorla",["30ml"]],
+    ["Supreme","Tabacco, Cocco, Biscotto e Vaniglia",["30ml"]],
+    ["Relax","Tabacco, Biscotto, Vaniglia e Caffè",["30ml"]],
+  ].map(([b,f,sz])=>({brand:b,flavor:f,format:['20-30ml'],type:'tab',subtype:'tab-2030',tags:sz||[]})),
+
+  // ═══════════════ 10ML MONOPOLIO ═══════════════
+  ...[
+    ["Q Mabb Red","Dolce e Intenso — 4/8/16mg"],
+    ["Win-ston Blu","Tabacco Mediamente Secco — 4/8/16mg"],
+    ["Cam-El","Tabacco Dolce e Secco — 4/8/16mg"],
+    ["Hollywood","Tabacco Secco — 4/8/16mg"],
+    ["TNT Booms","Tabacco Dolce Cubano — 4/8/16mg"],
+    ["First Pick Fruit","Tabacco Fruttato — 4/8/12mg"],
+    ["Red Bacco","Tabacco Secco — 3/6/9/15mg"],
+    ["Dolce Bacco","Tabacco Gold e Vaniglia — 3/6/9/15mg"],
+    ["Otello","Tabacco Lievemente Secco — 3/6/9/15mg"],
+    ["Deciso","Miscela di Tabacchi — 3/6/9/15mg"],
+    ["Morbido","Tabacco Morbido al Biscotto — 3/6/9/15mg"],
+  ].map(([b,f])=>({brand:b,flavor:f,format:['10ml'],type:'tab',subtype:'mono',tags:['nic','7.50€']})),
+
+  // ═══════════════ 10ML CREMOSI (Liquidi Cremosi 10ml) ═══════════════
+  ...[
+    ["Good","Nocciola e Cioccolato — 0/3/6/9/15mg"],
+    ["Nilla Mix","Mix di Vaniglie — 0/3/6/9/15mg"],
+    ["Nilla Rick","Biscotto alla Vaniglia — 0/3/6/9/15mg"],
+    ["Riachest","Wafer alla Nocciola — 0/3/6/9/15mg"],
+    ["Bay No 9","Crema al Baileys — 0/3/6/9/15mg"],
+    ["Palmi","Crema di Cocco e Cioccolato — 0/3/6/9/15mg"],
+    ["Dolce Nero","Caramello Salato e Caffè — 0/3/6/9/15mg"],
+  ].map(([b,f])=>({brand:b,flavor:f,format:['10ml'],type:'cream',subtype:'cream-10',tags:['nic','7.50€']})),
+
+  // ═══════════════ 10ML FRUTTATI ═══════════════
+  ...[
+    ["Fruit","Mora, Lampone, Ribes e Fragole — 0/4/8/16mg"],
+    ["Mediterraneo","Papaya, Lime e Fico d'India — 0/3/6/9/15mg"],
+    ["Giallo di Sicilia","Limoni di Sicilia — 0/3/6/9/15mg"],
+    ["Fresh Bullet","Lime e Mirtillo — 0/4/8/16mg"],
+    ["Mix Esotico","Melone, Fragola e Kiwi — 0/3/6/9/15mg"],
+    ["Iceberg","Mix di Frutta Fresh — 0/3/6/9/15mg"],
+    ["Fresh Astaire","Frutti Rossi e Uva Fresh — 0/3/6/9/15mg"],
+    ["Estate 28","Tè Freddo al Limone — 0/3/6/9/15mg"],
+    ["Summer 29","Tè Freddo alla Pesca — 0/3/6/9/15mg"],
+    ["Fresh Cuba","Limone e Menta — 0/3/6/9/15mg"],
+    ["Malizia","Liquirizia e Limoni Ghiacciati — 0/3/6/9/15mg"],
+    ["Glaciale","Menta Ghiacciata — 0/3/6/9/15mg"],
+  ].map(([b,f])=>({brand:b,flavor:f,format:['10ml'],type:'fruit',subtype:'fruit-10',tags:['nic','7.50€']})),
+
+  // ═══════════════ 10ML ELFBAR/ELFIC ═══════════════
+  ...[
+    ["Elfbar","Ciliegia"],["Elfbar","Gelato alla Fragola"],
+    ["Elfbar","Fragola e Kiwi"],["Elfbar","Pompelmo"],["Elfbar","Uva"],
+    ["Elfbar","Cherry Cola"],["Elfbar","Mela e Pesca"],
+    ["Elfbar","Mirtillo e Lampone"],["Elfbar","Red Bull Ice"],
+    ["Elfbar","Fragola Ice"],["Elfbar","Mango"],["Elfbar","Mirtillo"],
+    ["Elfbar","Menta"],["Elfbar","Pesca Ice"],["Elfbar","Anguria"],
+    ["Elfbar","Coca Cola"],["Elfbar","Kiwi, Passion Fruit e Guava"],
+    ["Elfbar","Pink Limonata"],["Elfbar","Cotton Candy Ice"],
+    ["Elfbar","Blue Razz — Limone e Mirtillo"],
+    ["Elfbar","Tabacco Cremoso"],["Don Cristo","Sigaro"],
+    ["Don Cristo","Sigaro e Pistacchio"],["Don Cristo","Sigaro e Caffè"],
+    ["Don Cristo","Sigaro Intenso"],["Don Cristo","Sigaro e Crema Custard"],
+  ].map(([b,f])=>({brand:b,flavor:f,format:['10ml'],type:b==='Don Cristo'?'tab':'fruit',subtype:'elfbar',tags:['nic','8.50€']})),
+];
+
+// ════════════════════════════
+// STATE
+// ════════════════════════════
+let currentFmt = '60ml';
+let currentType = null;
+let activeBubbles = new Set();
+let searchQ = '';
+
+// ════════════════════════════
+// SECTION CONFIG
+// ════════════════════════════
+const SECTIONS = {
+  fresh:         {label:'Fruttati Fresh',       emoji:'🍓', cls:'sh-fruit', fmt:['60ml']},
+  nofresh:       {label:'Fruttati No Fresh',     emoji:'🍇', cls:'sh-fruit', fmt:['60ml']},
+  ice:           {label:'Extra Ice & Fruizee',   emoji:'❄️', cls:'sh-ice',   fmt:['60ml']},
+  'fruit-2030':  {label:'Fruttati',              emoji:'🍓', cls:'sh-fruit', fmt:['20-30ml']},
+  'ice-2030':    {label:'Ice — Fruizee',         emoji:'❄️', cls:'sh-ice',   fmt:['20-30ml']},
+  biscotto:      {label:'Biscotto · Donut',      emoji:'🍪', cls:'sh-cream', fmt:['60ml']},
+  cereali:       {label:'Cereali & Snack',       emoji:'🥣', cls:'sh-cream', fmt:['60ml']},
+  torte:         {label:'Torte · Cheesecake',    emoji:'🎂', cls:'sh-cream', fmt:['60ml']},
+  popcorn:       {label:'Pop Corn',              emoji:'🍿', cls:'sh-cream', fmt:['60ml']},
+  crema:         {label:'Crema · Vaniglia',      emoji:'🍮', cls:'sh-cream', fmt:['60ml']},
+  gelati:        {label:'Gelati',                emoji:'🍦', cls:'sh-cream', fmt:['60ml']},
+  dubai:         {label:'Dubai Chocolate',       emoji:'🍫', cls:'sh-cream', fmt:['60ml']},
+  'cream-2030':  {label:'Cremosi',               emoji:'🍪', cls:'sh-cream', fmt:['20-30ml']},
+  'tab-dolci':   {label:'Tabacchi Dolci',        emoji:'🚬', cls:'sh-tab',   fmt:['60ml']},
+  'tab-equil':   {label:'Tabacchi Equilibrati',  emoji:'🚬', cls:'sh-tab',   fmt:['60ml']},
+  'tab-secchi':  {label:'Tabacchi Secchi',       emoji:'🚬', cls:'sh-tab',   fmt:['60ml']},
+  'tab-fruit-ment':{label:'Tabacchi Fruttati & Mentolati', emoji:'🚬', cls:'sh-tab', fmt:['60ml']},
+  'tab-sigari':  {label:'Sigari Speciali +3€',   emoji:'🚬', cls:'sh-tab',   fmt:['60ml']},
+  'tab-cremosi': {label:'Tabacchi Cremosi',      emoji:'🔶', cls:'sh-hybrid',fmt:['60ml']},
+  'tab-2030':    {label:'Tabacchi',              emoji:'🚬', cls:'sh-tab',   fmt:['20-30ml']},
+  mono:          {label:'Monopolio — 7.50€',     emoji:'🚬', cls:'sh-tab',   fmt:['10ml']},
+  'cream-10':    {label:'Cremosi — 7.50€',       emoji:'🍪', cls:'sh-cream', fmt:['10ml']},
+  'fruit-10':    {label:'Fruttati — 7.50€',      emoji:'🍓', cls:'sh-fruit', fmt:['10ml']},
+  elfbar:        {label:'Elfbar / Elfic — 8.50€',emoji:'⚡', cls:'sh-ice',   fmt:['10ml']},
 };
 
-let currentTab = 'all';
+// Aroma tabs per format
+const AROMA_OPTIONS = {
+  '60ml':    [{id:'fruit',label:'🍓 Fruttati'},{id:'cream',label:'🍪 Cremosi'},{id:'tab',label:'🚬 Tabacchi'},{id:'hybrid',label:'🔶 Tab. Cremosi'}],
+  '20-30ml': [{id:'fruit',label:'🍓 Fruttati'},{id:'cream',label:'🍪 Cremosi'},{id:'tab',label:'🚬 Tabacchi'}],
+  '10ml':    [{id:'fruit',label:'🍓 Fruttati'},{id:'cream',label:'🍪 Cremosi'},{id:'tab',label:'🚬 Tabacchi'},{id:'elfbar',label:'⚡ Elfbar'}],
+};
+
+// ════════════════════════════
+// COMPUTE TOP FLAVORS
+// ════════════════════════════
+const FLAVOR_KEYWORDS = [
+  'fragola','mirtillo','mango','anguria','limone','pesca','lampone',
+  'vaniglia','cioccolato','cocco','uva','melone','arancia','ananas',
+  'caramello','tabacco','nocciola','banana','ciliegia','kiwi',
+  'passion fruit','dragon fruit','pistacchio','menta','crema',
+];
+
+function computeTops(items) {
+  const counts = {};
+  FLAVOR_KEYWORDS.forEach(k => counts[k] = 0);
+  items.forEach(item => {
+    const text = (item.flavor + ' ' + item.brand).toLowerCase();
+    FLAVOR_KEYWORDS.forEach(k => { if (text.includes(k)) counts[k]++; });
+  });
+  return Object.entries(counts)
+    .filter(([,n]) => n > 0)
+    .sort((a,b) => b[1]-a[1])
+    .slice(0, 16);
+}
+
+function getRelated(activeSet, allTops) {
+  if (activeSet.size === 0) return [];
+  const active = [...activeSet];
+  return allTops
+    .filter(([k,n]) => !activeSet.has(k) && n > 0)
+    .map(([k,n]) => {
+      // check co-occurrence
+      const coCount = DB.filter(item => {
+        const t = item.text || (item.flavor+' '+item.brand).toLowerCase();
+        return active.every(a => t.includes(a)) && t.includes(k);
+      }).length;
+      return [k, coCount];
+    })
+    .filter(([,n]) => n > 0)
+    .sort((a,b) => b[1]-a[1])
+    .slice(0, 8)
+    .map(([k]) => k);
+}
+
+// ════════════════════════════
+// BUILD DOM
+// ════════════════════════════
+function buildSections() {
+  const container = document.getElementById('sectionsContainer');
+  container.innerHTML = '';
+  Object.entries(SECTIONS).forEach(([id, cfg]) => {
+    const sec = document.createElement('div');
+    sec.className = 'section';
+    sec.id = 'sec-' + id;
+    sec.innerHTML = `
+      <div class="sec-head ${cfg.cls}">
+        <span class="sec-emoji">${cfg.emoji}</span>
+        <div>
+          <div class="sec-title">${cfg.label}</div>
+          <div class="sec-sub">${cfg.fmt.join(' / ')}</div>
+        </div>
+        <div class="sec-badge" id="badge-${id}"></div>
+      </div>
+      <div class="sec-body">
+        <div class="grid" id="grid-${id}"></div>
+      </div>`;
+    container.appendChild(sec);
+  });
+}
 
 function buildCard(item) {
   let tagsHtml = '';
   const t = item.tags || [];
   if (t.includes('ice')) tagsHtml += '<span class="ctag ctag-ice">❄ Ice</span>';
   if (t.includes('fresh')) tagsHtml += '<span class="ctag ctag-fresh">Fresh</span>';
-  if (t.includes('30ml')) tagsHtml += '<span class="ctag ctag-size">30ml</span>';
-  if (t.includes('20ml')) tagsHtml += '<span class="ctag ctag-size">20ml</span>';
-  if (t.includes('nic')) {
-    const mg = t.find(x => x.includes('mg'));
-    tagsHtml += `<span class="ctag ctag-nic">${mg||'Nic'}</span>`;
-  }
-  return `<div class="card">
+  if (t.includes('20ml') && !t.includes('30ml')) tagsHtml += '<span class="ctag ctag-size">20ml</span>';
+  else if (t.includes('30ml') && !t.includes('20ml')) tagsHtml += '<span class="ctag ctag-size">30ml</span>';
+  if (t.includes('sigaro')) tagsHtml += '<span class="ctag ctag-nofresh">+3€</span>';
+  if (t.includes('nic')) tagsHtml += `<span class="ctag ctag-nic">${t.find(x=>x.includes('€'))||'nic'}</span>`;
+  return `<div class="card" data-flavor="${item.flavor.toLowerCase()}" data-brand="${item.brand.toLowerCase()}">
     <div class="card-flavor">${item.flavor}</div>
     <div class="card-brand">${item.brand}</div>
-    ${tagsHtml ? `<div class="card-tags">${tagsHtml}</div>` : ''}
+    ${tagsHtml?`<div class="card-tags">${tagsHtml}</div>`:''}
   </div>`;
 }
 
-function populateGrid(id, arr) {
-  const el = document.getElementById(id);
-  if (el) el.innerHTML = arr.map(buildCard).join('');
+function populateGrids() {
+  const bySubtype = {};
+  DB.forEach(item => {
+    if (!bySubtype[item.subtype]) bySubtype[item.subtype] = [];
+    bySubtype[item.subtype].push(item);
+  });
+  Object.entries(bySubtype).forEach(([sub, items]) => {
+    const g = document.getElementById('grid-' + sub);
+    if (g) g.innerHTML = items.map(buildCard).join('');
+  });
 }
 
-function populate() {
-  const map = {
-    'grid-fresh': DATA.fresh,
-    'grid-nofresh': DATA.nofresh,
-    'grid-ice': DATA.ice,
-    'grid-biscotto': DATA.biscotto,
-    'grid-cereali': DATA.cereali,
-    'grid-torte': DATA.torte,
-    'grid-popcorn': DATA.popcorn,
-    'grid-crema': DATA.crema,
-    'grid-gelati': DATA.gelati,
-    'grid-dubai': DATA.dubai,
-    'grid-tab-dolci': DATA.tabDolci,
-    'grid-tab-equil': DATA.tabEquil,
-    'grid-tab-secchi': DATA.tabSecchi,
-    'grid-tab-cremosi': DATA.tabCremosi,
-    'grid-tab-fruttati': DATA.tabFruttati,
-    'grid-tab-menta': DATA.tabMenta,
-    'grid-tab-alcolici': DATA.tabAlcolici,
-    'grid-tab-estratti': DATA.tabEstrattiAFreddo,
-    'grid-tab-sigari': DATA.tabSigari,
-    'grid-tab-mono': DATA.tabMono,
-    'grid-tab-elfbar': DATA.tabElfbar,
-  };
-  for (const [id, arr] of Object.entries(map)) populateGrid(id, arr);
-}
-
-function countVis(gridId) {
-  const g = document.getElementById(gridId);
-  if (!g) return 0;
-  return [...g.querySelectorAll('.card')].filter(c => !c.classList.contains('hidden')).length;
-}
-
-function setTab(btn, cat) {
-  document.querySelectorAll('.tab').forEach(t => t.className = 'tab');
-  btn.className = `tab a-${cat}`;
-  currentTab = cat;
-  filterAll();
-}
-
-function filterAll() {
-  const q = document.getElementById('searchInput').value.toLowerCase().trim();
-  const secs = {
-    'sec-fruit': 'fruit',
-    'sec-ice': 'ice',
-    'sec-creamy': 'creamy',
-    'sec-tab': 'tab',
-  };
-
-  for (const [id, cat] of Object.entries(secs)) {
-    const el = document.getElementById(id);
-    if (el) el.classList.toggle('hidden', currentTab !== 'all' && currentTab !== cat);
+// ════════════════════════════
+// FILTERING LOGIC
+// ════════════════════════════
+function getVisibleItems() {
+  let items = DB.filter(item => item.format.includes(currentFmt));
+  if (currentType) {
+    if (currentType === 'elfbar') {
+      items = items.filter(i => i.subtype === 'elfbar');
+    } else {
+      items = items.filter(i => i.type === currentType);
+    }
   }
+  return items;
+}
 
-  document.getElementById('priceStrip').classList.toggle('hidden', currentTab === 'tab');
+function render() {
+  const visItems = getVisibleItems();
 
-  document.querySelectorAll('.card').forEach(card => {
-    if (!q) { card.classList.remove('hidden'); return; }
-    card.classList.toggle('hidden', !card.textContent.toLowerCase().includes(q));
+  // Show/hide sections
+  Object.entries(SECTIONS).forEach(([id, cfg]) => {
+    const sec = document.getElementById('sec-' + id);
+    if (!sec) return;
+    const fmtMatch = cfg.fmt.includes(currentFmt);
+    let typeMatch = true;
+    if (currentType) {
+      if (currentType === 'elfbar') typeMatch = id === 'elfbar';
+      else {
+        const secType = id === 'hybrid' || id === 'tab-cremosi' ? 'hybrid'
+          : id.startsWith('tab') ? 'tab'
+          : id.startsWith('fruit') || id === 'fresh' || id === 'nofresh' || id === 'ice' || id.includes('ice') ? 'fruit'
+          : 'cream';
+        typeMatch = secType === currentType || (currentType === 'hybrid' && id === 'tab-cremosi');
+      }
+    }
+    sec.classList.toggle('show', fmtMatch && typeMatch);
   });
 
-  const sectionGrids = {
-    'sec-fruit': ['grid-fresh','grid-nofresh'],
-    'sec-ice': ['grid-ice'],
-    'sec-creamy': ['grid-biscotto','grid-cereali','grid-torte','grid-popcorn','grid-crema','grid-gelati','grid-dubai'],
-    'sec-tab': ['grid-tab-dolci','grid-tab-equil','grid-tab-secchi','grid-tab-cremosi','grid-tab-fruttati','grid-tab-menta','grid-tab-alcolici','grid-tab-estratti','grid-tab-sigari','grid-tab-mono','grid-tab-elfbar'],
-  };
+  // Apply bubble + search filter to cards
+  const bubs = [...activeBubbles];
+  const q = searchQ.trim().toLowerCase();
 
-  let grand = 0;
-  for (const [secId, grids] of Object.entries(sectionGrids)) {
-    const sec = document.getElementById(secId);
-    if (!sec || sec.classList.contains('hidden')) continue;
-    const n = grids.reduce((a, g) => a + countVis(g), 0);
-    grand += n;
-    const badge = document.getElementById(secId.replace('sec-','cnt-'));
-    if (badge) badge.textContent = n ? `${n} prodotti` : '';
-    if (q) sec.classList.toggle('hidden', n === 0);
+  let totalVis = 0;
+  Object.keys(SECTIONS).forEach(id => {
+    const grid = document.getElementById('grid-' + id);
+    if (!grid) return;
+    const sec = document.getElementById('sec-' + id);
+    if (!sec || !sec.classList.contains('show')) return;
+
+    let count = 0;
+    grid.querySelectorAll('.card').forEach(card => {
+      const fl = card.dataset.flavor || '';
+      const br = card.dataset.brand || '';
+      const text = fl + ' ' + br;
+      const bubMatch = bubs.length === 0 || bubs.every(b => text.includes(b));
+      const qMatch = q === '' || text.includes(q);
+      const show = bubMatch && qMatch;
+      card.classList.toggle('hidden', !show);
+      if (show) count++;
+    });
+    totalVis += count;
+
+    const badge = document.getElementById('badge-' + id);
+    if (badge) badge.textContent = count ? count + ' prodotti' : '';
+    if ((bubs.length > 0 || q) && count === 0) sec.classList.remove('show');
+  });
+
+  // Result info
+  const total = visItems.length;
+  const info = document.getElementById('resultInfo');
+  if (bubs.length > 0 || q) {
+    info.innerHTML = `<strong>${totalVis}</strong> risultati`;
+    if (bubs.length) info.innerHTML += ` per: <strong>${bubs.join(' + ')}</strong>`;
+    if (q) info.innerHTML += ` · cerca: "<strong>${q}</strong>"`;
+  } else {
+    info.innerHTML = `<strong>${total}</strong> prodotti nel formato selezionato`;
   }
 
-  const info = document.getElementById('resultInfo');
-  const tot = Object.values(DATA).reduce((a, arr) => a + arr.length, 0);
-  info.innerHTML = q
-    ? `<strong>${grand}</strong> prodotti trovati per "<strong>${q}</strong>"`
-    : `<strong>${tot}</strong> prodotti in catalogo`;
+  const anyVis = [...document.querySelectorAll('.section.show')].length > 0;
+  document.getElementById('emptyState').classList.toggle('show', !anyVis);
 
-  const anySec = [...document.querySelectorAll('.section')].some(s => !s.classList.contains('hidden'));
-  document.getElementById('emptyState').classList.toggle('hidden', anySec);
+  // Update tops & related
+  updateTops(visItems);
 }
 
-populate();
-filterAll();
+// ════════════════════════════
+// TOP BUBBLES
+// ════════════════════════════
+let currentTops = [];
+
+function updateTops(items) {
+  currentTops = computeTops(items);
+  const container = document.getElementById('topsBubbles');
+  container.innerHTML = currentTops.map(([k,n]) => {
+    const sel = activeBubbles.has(k) ? 'sel' : '';
+    return `<button class="bubble ${sel}" onclick="toggleBubble('${k}')">
+      ${k} <span class="bcount">${n}</span>
+    </button>`;
+  }).join('');
+
+  // Related
+  const related = getRelated(activeBubbles, currentTops);
+  const relBar = document.getElementById('relatedBar');
+  const relPills = document.getElementById('relatedPills');
+  if (related.length > 0 && activeBubbles.size > 0) {
+    relPills.innerHTML = related.map(k =>
+      `<button class="rpill" onclick="toggleBubble('${k}')">${k}</button>`
+    ).join('');
+    relBar.classList.add('show');
+  } else {
+    relBar.classList.remove('show');
+  }
+}
+
+function toggleBubble(k) {
+  if (activeBubbles.has(k)) activeBubbles.delete(k);
+  else activeBubbles.add(k);
+  render();
+}
+
+// ════════════════════════════
+// AROMA TABS
+// ════════════════════════════
+function buildAromaTabs() {
+  const container = document.getElementById('aromaTabs');
+  const opts = AROMA_OPTIONS[currentFmt] || [];
+  container.innerHTML = `<button class="atab${!currentType?' active-'+( currentFmt==='10ml'?'fruit':'fruit'):''}" onclick="setType(null,this)" style="${!currentType?'background:var(--dark);border-color:var(--dark);color:#fff':''}">Tutti</button>` +
+    opts.map(o => `<button class="atab${currentType===o.id?' active-'+o.id:''}" onclick="setType('${o.id}',this)">${o.label}</button>`).join('');
+}
+
+function setType(type, btn) {
+  currentType = type;
+  activeBubbles.clear();
+  buildAromaTabs();
+  render();
+}
+
+// ════════════════════════════
+// FORMAT TABS
+// ════════════════════════════
+function setFmt(btn, fmt) {
+  document.querySelectorAll('.fmt-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  currentFmt = fmt;
+  currentType = null;
+  activeBubbles.clear();
+  searchQ = '';
+  document.getElementById('searchInput').value = '';
+  document.getElementById('clrBtn').style.display = 'none';
+
+  // Price panels
+  document.getElementById('pricePanel60').classList.toggle('hidden', fmt !== '60ml');
+  document.getElementById('pricePanel2030').classList.toggle('hidden', fmt !== '20-30ml');
+  document.getElementById('pricePanel10').classList.toggle('hidden', fmt !== '10ml');
+
+  buildAromaTabs();
+  render();
+}
+
+// ════════════════════════════
+// SEARCH
+// ════════════════════════════
+function onSearch() {
+  searchQ = document.getElementById('searchInput').value;
+  document.getElementById('clrBtn').style.display = searchQ ? 'block' : 'none';
+  activeBubbles.clear();
+  render();
+}
+
+function clearSearch() {
+  searchQ = '';
+  document.getElementById('searchInput').value = '';
+  document.getElementById('clrBtn').style.display = 'none';
+  activeBubbles.clear();
+  render();
+}
+
+// ════════════════════════════
+// INIT
+// ════════════════════════════
+buildSections();
+populateGrids();
+buildAromaTabs();
+render();
 </script>
 
 </body>
