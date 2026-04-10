@@ -3,7 +3,6 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8">
-<meta name="color-scheme" content="only light">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>VapePoint — Listino Prodotti</title>
@@ -28,17 +27,6 @@ button { font-family: inherit; cursor: pointer; }
 input  { font-family: inherit; }
 
 /* ─── TOKENS ────────────────────────────────────────────── */
-html {
-color-scheme: only light;
-forced-color-adjust: none;
-}
-
-/* Force light mode regardless of OS/browser dark mode */
-@media (prefers-color-scheme: dark) {
-html { background: #F4F2EE !important; color: #1A1A1A !important; }
-body { background: #F4F2EE !important; color: #1A1A1A !important; }
-}
-
 :root {
 /* Brand */
 –green:      #1B6B2E;
@@ -458,6 +446,131 @@ display: none;
 .fmt-btn { border-right: none; border-bottom: 2px solid #E0DDD7; }
 .fmt-btn:last-child { border-bottom: none; }
 .grid { grid-template-columns: 1fr; }
+}
+
+/* ═══════════════════════════════════════════
+DARK MODE — risponde al tema di sistema
+═══════════════════════════════════════════ */
+@media (prefers-color-scheme: dark) {
+
+html, body {
+background: #141414;
+color: #ECECEC;
+}
+
+/* Header */
+header { background: #0A0A0A; border-bottom-color: #2E9447; }
+
+/* Search bar */
+.searchbar-wrap { background: #1C1C1C; border-bottom-color: #2A2A2A; }
+.search-input {
+background: #252525;
+border-color: #333;
+color: #ECECEC;
+}
+.search-input:focus { border-color: #3fa050; box-shadow: 0 0 0 3px rgba(46,148,71,.18); }
+.search-input::placeholder { color: #666; }
+
+/* Format tabs */
+.fmt-tabs { background: #1C1C1C; border-color: #2A2A2A; }
+.fmt-btn { color: #AAA; border-right-color: #2A2A2A; }
+.fmt-btn:hover { background: #232323; }
+.fmt-btn.active { background: #2E9447; color: #fff; }
+.fmt-btn.active .fmt-price { color: #fff; }
+.fmt-btn.active .fmt-label { color: rgba(255,255,255,.75); }
+.fmt-btn.active .fmt-sub { color: rgba(255,255,255,.6); }
+.fmt-price { color: #3fa050; }
+
+/* Price panel */
+.price-panel { background: #1C1C1C; border-color: #2A2A2A; }
+.price-panel-title { color: #666; }
+.ppill { background: #1A2E1E; border-color: #2E5235; }
+.ppill-nic { color: #3fa050; }
+.ppill-val { color: #3fa050; }
+.ppill-sub { color: #555; }
+
+/* Aroma tabs */
+.atab { background: #1C1C1C; border-color: #2A2A2A; color: #AAA; }
+.atab:hover { border-color: #555; color: #EEE; }
+.atab[data-type=“all”].active   { background: #ECECEC; border-color: #ECECEC; color: #111; }
+.atab[data-type=“fruit”].active { background: #C04A10; border-color: #C04A10; color: #fff; }
+.atab[data-type=“cream”].active { background: #8A6200; border-color: #8A6200; color: #fff; }
+.atab[data-type=“tab”].active   { background: #1E4A8A; border-color: #1E4A8A; color: #fff; }
+.atab[data-type=“hybrid”].active{ background: #5A2A8A; border-color: #5A2A8A; color: #fff; }
+.atab[data-type=“elfbar”].active{ background: #0A7080; border-color: #0A7080; color: #fff; }
+
+/* Status bar */
+.status-bar { color: #555; }
+.status-bar strong { color: #3fa050; }
+
+/* Tops / bubbles */
+.tops-title { color: #555; }
+.bubble { background: #1C1C1C; border-color: #333; color: #AAA; }
+.bubble:hover { background: #252525; border-color: #555; color: #EEE; }
+.bubble.sel { background: #2E9447; border-color: #2E9447; color: #fff; }
+.bubble .bcount { background: rgba(255,255,255,.08); color: #666; }
+.bubble.sel .bcount { background: rgba(255,255,255,.15); color: #ccc; }
+
+/* Related */
+.related-wrap { background: #1C1C1C; border-color: #2A2A2A; }
+.related-title { color: #555; }
+.rpill { background: #252525; border-color: #333; color: #AAA; }
+.rpill:hover { background: #ECECEC; border-color: #ECECEC; color: #111; }
+
+/* Section heads */
+.sh-fruit  { background: #2A1800; border-color: #6A3000; color: #F5A060; }
+.sh-ice    { background: #001E24; border-color: #0A5060; color: #50C0D0; }
+.sh-cream  { background: #201400; border-color: #5A3800; color: #D4A040; }
+.sh-tab    { background: #001028; border-color: #0A2A5A; color: #6090D0; }
+.sh-hybrid { background: #180A28; border-color: #3A1868; color: #A870E0; }
+
+/* Section body */
+.sec-body { background: #1C1C1C; border-color: #2A2A2A; }
+.sub-label { color: #444; border-bottom-color: #2A2A2A; }
+.sub-extra { background: #001028; color: #6090D0; border-color: #0A2A5A; }
+
+/* Cards */
+.card { background: #222; border-color: #2E2E2E; }
+.card:hover { background: #282828; border-color: #444; box-shadow: 0 2px 8px rgba(0,0,0,.4); }
+.card-flavor { color: #ECECEC; }
+.card-brand  { color: #555; }
+
+/* Tags */
+.tag-ice    { background: #001E24; color: #50C0D0; border-color: #0A4A58; }
+.tag-fresh  { background: #0A1E0E; color: #3fa050; border-color: #1A4A22; }
+.tag-size   { background: #252525; color: #888; border-color: #333; }
+.tag-price  { background: #201400; color: #D4A040; border-color: #4A3000; }
+.tag-sigaro { background: #001028; color: #6090D0; border-color: #0A2A5A; }
+.tag-nic    { background: #1E1800; color: #C0A030; border-color: #3A2E00; }
+
+/* Empty state */
+.empty-state { color: #444; }
+}
+
+/* ── NIC PILLS ── */
+.nic-pills {
+display: flex;
+gap: 4px;
+flex-wrap: wrap;
+margin-top: 7px;
+}
+.nic-pill {
+font-size: .62rem;
+font-weight: 700;
+padding: 2px 7px;
+border-radius: 10px;
+background: #FEF3C7;
+color: #7A5500;
+border: 1px solid #F0CC70;
+letter-spacing: .2px;
+white-space: nowrap;
+}
+@media (prefers-color-scheme: dark) {
+.nic-pill {
+background: #1E1600;
+color: #C8A030;
+border-color: #3A2E00;
+}
 }
 </style>
 
@@ -1170,45 +1283,45 @@ Object.entries(CREAM60).forEach(([sub,rows])=>rows.forEach(([b,f])=>add(b,f,'60m
 
 /* ── 10ML MONOPOLIO ── */
 [
-  ["Q Mabb Red","Dolce e Intenso — 4/8/16mg"],
-  ["Win-ston Blu","Tabacco Mediamente Secco — 4/8/16mg"],
-  ["Cam-El","Tabacco Dolce e Secco — 4/8/16mg"],
-  ["Hollywood","Tabacco Secco — 4/8/16mg"],
-  ["TNT Booms","Tabacco Dolce Cubano — 4/8/16mg"],
-  ["First Pick Fruit","Tabacco Fruttato — 4/8/12mg"],
-  ["Red Bacco","Tabacco Secco — 3/6/9/15mg"],
-  ["Dolce Bacco","Tabacco Gold e Vaniglia — 3/6/9/15mg"],
-  ["Otello","Tabacco Lievemente Secco — 3/6/9/15mg"],
-  ["Deciso","Miscela di Tabacchi — 3/6/9/15mg"],
-  ["Morbido","Tabacco Morbido al Biscotto — 3/6/9/15mg"],
-].forEach(([b,f])=>add(b,f,'10ml','tab','mono',['nic','7.50€']));
+  ["Q Mabb Red","Dolce e Intenso","4/8/16"],
+  ["Win-ston Blu","Tabacco Mediamente Secco","4/8/16"],
+  ["Cam-El","Tabacco Dolce e Secco","4/8/16"],
+  ["Hollywood","Tabacco Secco","4/8/16"],
+  ["TNT Booms","Tabacco Dolce Cubano","4/8/16"],
+  ["First Pick Fruit","Tabacco Fruttato","4/8/12"],
+  ["Red Bacco","Tabacco Secco","3/6/9/15"],
+  ["Dolce Bacco","Tabacco Gold e Vaniglia","3/6/9/15"],
+  ["Otello","Tabacco Lievemente Secco","3/6/9/15"],
+  ["Deciso","Miscela di Tabacchi","3/6/9/15"],
+  ["Morbido","Tabacco Morbido al Biscotto","3/6/9/15"],
+].forEach(([b,f,mg])=>add(b,f,'10ml','tab','mono',['nic','7.50€','mg:'+mg]));
 
 /* ── 10ML CREMOSI ── */
 [
-  ["Good","Nocciola e Cioccolato — 0/3/6/9/15mg"],
-  ["Nilla Mix","Mix di Vaniglie — 0/3/6/9/15mg"],
-  ["Nilla Rick","Biscotto alla Vaniglia — 0/3/6/9/15mg"],
-  ["Riachest","Wafer alla Nocciola — 0/3/6/9/15mg"],
-  ["Bay No 9","Crema al Baileys — 0/3/6/9/15mg"],
-  ["Palmi","Crema di Cocco e Cioccolato — 0/3/6/9/15mg"],
-  ["Dolce Nero","Caramello Salato e Caffè — 0/3/6/9/15mg"],
-].forEach(([b,f])=>add(b,f,'10ml','cream','cream-10',['nic','7.50€']));
+  ["Good","Nocciola e Cioccolato","0/3/6/9/15"],
+  ["Nilla Mix","Mix di Vaniglie","0/3/6/9/15"],
+  ["Nilla Rick","Biscotto alla Vaniglia","0/3/6/9/15"],
+  ["Riachest","Wafer alla Nocciola","0/3/6/9/15"],
+  ["Bay No 9","Crema al Baileys","0/3/6/9/15"],
+  ["Palmi","Crema di Cocco e Cioccolato","0/3/6/9/15"],
+  ["Dolce Nero","Caramello Salato e Caffè","0/3/6/9/15"],
+].forEach(([b,f,mg])=>add(b,f,'10ml','cream','cream-10',['nic','7.50€','mg:'+mg]));
 
 /* ── 10ML FRUTTATI ── */
 [
-  ["Fruit","Mora, Lampone, Ribes e Fragole — 0/4/8/16mg"],
-  ["Mediterraneo","Papaya, Lime e Fico d'India — 0/3/6/9/15mg"],
-  ["Giallo di Sicilia","Limoni di Sicilia — 0/3/6/9/15mg"],
-  ["Fresh Bullet","Lime e Mirtillo — 0/4/8/16mg"],
-  ["Mix Esotico","Melone, Fragola e Kiwi — 0/3/6/9/15mg"],
-  ["Iceberg","Mix di Frutta Fresh — 0/3/6/9/15mg"],
-  ["Fresh Astaire","Frutti Rossi e Uva Fresh — 0/3/6/9/15mg"],
-  ["Estate 28","Tè Freddo al Limone — 0/3/6/9/15mg"],
-  ["Summer 29","Tè Freddo alla Pesca — 0/3/6/9/15mg"],
-  ["Fresh Cuba","Limone e Menta — 0/3/6/9/15mg"],
-  ["Malizia","Liquirizia e Limoni Ghiacciati — 0/3/6/9/15mg"],
-  ["Glaciale","Menta Ghiacciata — 0/3/6/9/15mg"],
-].forEach(([b,f])=>add(b,f,'10ml','fruit','fruit-10',['nic','7.50€']));
+  ["Fruit","Mora, Lampone, Ribes e Fragole","0/4/8/16"],
+  ["Mediterraneo","Papaya, Lime e Fico d'India","0/3/6/9/15"],
+  ["Giallo di Sicilia","Limoni di Sicilia","0/3/6/9/15"],
+  ["Fresh Bullet","Lime e Mirtillo","0/4/8/16"],
+  ["Mix Esotico","Melone, Fragola e Kiwi","0/3/6/9/15"],
+  ["Iceberg","Mix di Frutta Fresh","0/3/6/9/15"],
+  ["Fresh Astaire","Frutti Rossi e Uva Fresh","0/3/6/9/15"],
+  ["Estate 28","Tè Freddo al Limone","0/3/6/9/15"],
+  ["Summer 29","Tè Freddo alla Pesca","0/3/6/9/15"],
+  ["Fresh Cuba","Limone e Menta","0/3/6/9/15"],
+  ["Malizia","Liquirizia e Limoni Ghiacciati","0/3/6/9/15"],
+  ["Glaciale","Menta Ghiacciata","0/3/6/9/15"],
+].forEach(([b,f,mg])=>add(b,f,'10ml','fruit','fruit-10',['nic','7.50€','mg:'+mg]));
 
 /* ── 10ML ELFBAR / ELFIC ── */
 [
@@ -1225,7 +1338,7 @@ Object.entries(CREAM60).forEach(([sub,rows])=>rows.forEach(([b,f])=>add(b,f,'60m
   ["Don Cristo","Sigaro"],["Don Cristo","Sigaro e Pistacchio"],
   ["Don Cristo","Sigaro e Caffè"],["Don Cristo","Sigaro Intenso"],
   ["Don Cristo","Sigaro e Crema Custard"],
-].forEach(([b,f])=>add(b,f,'10ml','fruit','elfbar',['nic','8.50€']));
+].forEach(([b,f])=>add(b,f,'10ml','fruit','elfbar',['nic','8.50€','mg:10/20']));
 
 /* ══════════════════════════════════════════════════════════
    SECTIONS DEFINITION
@@ -1313,11 +1426,22 @@ function buildCard(item) {
   if (t.includes('20ml') && !t.includes('30ml')) tags += '<span class="tag tag-size">20ml</span>';
   if (t.includes('30ml') && !t.includes('20ml')) tags += '<span class="tag tag-size">30ml</span>';
   if (t.includes('sigaro')) tags += '<span class="tag tag-sigaro">+3€</span>';
-  if (t.includes('nic'))    tags += `<span class="tag tag-nic">${t.find(x=>x.includes('€'))||'nic'}</span>`;
+
+  // Nic pills for 10ml items
+  let nicHtml = '';
+  const mgTag = t.find(x => x.startsWith('mg:'));
+  if (mgTag) {
+    const values = mgTag.replace('mg:', '').split('/');
+    nicHtml = '<div class="nic-pills">' +
+      values.map(v => `<span class="nic-pill">${v} mg</span>`).join('') +
+      '</div>';
+  }
+
   return `<div class="card" data-t="${(item.flavor+' '+item.brand).toLowerCase()}">
     <div class="card-flavor">${item.flavor}</div>
     <div class="card-brand">${item.brand}</div>
     ${tags ? `<div class="card-tags">${tags}</div>` : ''}
+    ${nicHtml}
   </div>`;
 }
 
