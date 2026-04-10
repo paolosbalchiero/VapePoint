@@ -3,6 +3,7 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8">
+<meta name="color-scheme" content="only light">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>VapePoint — Listino Prodotti</title>
@@ -27,6 +28,17 @@ button { font-family: inherit; cursor: pointer; }
 input  { font-family: inherit; }
 
 /* ─── TOKENS ────────────────────────────────────────────── */
+html {
+color-scheme: only light;
+forced-color-adjust: none;
+}
+
+/* Force light mode regardless of OS/browser dark mode */
+@media (prefers-color-scheme: dark) {
+html { background: #F4F2EE !important; color: #1A1A1A !important; }
+body { background: #F4F2EE !important; color: #1A1A1A !important; }
+}
+
 :root {
 /* Brand */
 –green:      #1B6B2E;
